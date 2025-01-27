@@ -5,11 +5,11 @@
 int main() {
 
     char const *message[]{
-            "I am a C/C++ Deveolper 01 ...", "I am a C/C++ Deveolper 02 ...",
-            "I am a C/C++ Deveolper 03 ...", "I am a C/C++ Deveolper 04 ...",
-            "I am a C/C++ Deveolper 05 ...", "I am a C/C++ Deveolper 06 ...",
-            "I am a C/C++ Deveolper 07 ...", "I am a C/C++ Deveolper 08 ...",
-            "I am a C/C++ Deveolper 09 ...",
+            "I am a C/C++ Developer 01 ...", "I am a C/C++ Deveolper 02 ...",
+            "I am a C/C++ Developer 03 ...", "I am a C/C++ Deveolper 04 ...",
+            "I am a C/C++ Developer 05 ...", "I am a C/C++ Deveolper 06 ...",
+            "I am a C/C++ Developer 07 ...", "I am a C/C++ Deveolper 08 ...",
+            "I am a C/C++ Developer 09 ...",
     };
 
     for (size_t row{0llu}, col{0llu}; row < 9; ++row) {
