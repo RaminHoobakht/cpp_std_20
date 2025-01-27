@@ -1,0 +1,2 @@
+#define cpp_std20_VERSION_MAJOR @cpp_std20_VERSION_MAJOR@
+#define cpp_std20_VERSION_MINOR @cpp_std20_VERSION_MINOR@
