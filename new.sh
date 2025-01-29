@@ -14,16 +14,16 @@ now="$(date +"%T")"
 
 printf '%s\n' "#include <iostream>
 
-#define nl '\n'
+#define NL '\n'
 
 int main() {
 
 
 
-    std::cout << \"\n #STD20($now): The End ...\" << std::endl;
-    return (EXIT_SUCCESS);
+    std::cout << \"\n #($now): The End ...\" << std::endl;
+    return EXIT_SUCCESS;
 }" >> src/app/main.cpp
 
 git add --all
-git commit -m 'new source file'
+git commit -m 'before creating new source file'
 
