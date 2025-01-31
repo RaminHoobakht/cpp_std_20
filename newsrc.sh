@@ -45,7 +45,7 @@ namespace util {
     void separator(size_t, char) noexcept;
 
 
-    void separator(const size_t no = 64, const char ch = \'-\') noexcept {
+    void separator(const size_t no = 64, const char ch = '-') noexcept {
         for (size_t i{min}; i < no; ++i) {
             std::cout << ch;
         }
