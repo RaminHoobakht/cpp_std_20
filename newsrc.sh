@@ -1,7 +1,7 @@
 #! /bin/bash
 
 clear
-ls -ltrh archive/src_*
+ls -ls archive/src_*
 echo "enter file number: "
 read -r fileno
 

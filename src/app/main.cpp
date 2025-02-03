@@ -15,7 +15,6 @@ int main() {
     std::cout << "int_value    :" << int_value << NL;
     std::cout << "ref_int_value:" << ref_int_value << NL;
 
-
     std::cout << "\n #(15:29:46): The End ..." << std::endl;
     return EXIT_SUCCESS;
 }
