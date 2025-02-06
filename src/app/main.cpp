@@ -1,16 +1,11 @@
-#include "../header/main.hpp"
-#include <cstring>
 #include <iostream>
+#include "../header/main.hpp"
+
 
 int main() {
 
-    constexpr auto *str{"Try not. Do or do not. There is no try."};
-    constexpr char target{'T'};
-    const char *result{};
 
-    result = std::strchr(str, target);
-    std::cout << "result is: " << result << NL;
 
-    std::cout << "\n #(12:58:10): The End ..." << std::endl;
+    std::cout << "\n #(13:12:20): The End ..." << std::endl;
     return EXIT_SUCCESS;
 }
