@@ -61,5 +61,8 @@
         "typeinfo": "cpp",
         "variant": "cpp"
     },
-    "C_Cpp.default.compilerPath": "/usr/bin/g++-14"
+    "C_Cpp.default.compilerPath": "/usr/bin/g++-14",
+    "cSpell.words": [
+        "hinata"
+    ]
 }
