@@ -40,12 +40,12 @@ printf '%s\n' "#ifndef HEADER_MAIN_CPP
 
 namespace util {
 
-    constexpr size_t min{0LLU};
+    constexpr size_t min{0LU};
 
     void separator(size_t, char) noexcept;
 
 
-    void separator(const size_t no = 64, const char ch = '-') noexcept {
+    inline void separator(const size_t no = 64, const char ch = '-') noexcept {
         for (size_t i{min}; i < no; ++i) {
             std::cout << ch;
         }
