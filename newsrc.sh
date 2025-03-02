@@ -35,8 +35,11 @@ printf '%s\n' "#ifndef HEADER_MAIN_CPP
 
 #include <iostream>
 
-#define NL '\n'
-#define SP '\x20'
+#define NL          '\n'
+#define RT          '\r'
+#define SP          '\x20'
+#define LINE_FEED   std::cout << NL
+#define SEP         util::separator()
 
 namespace util {
 
