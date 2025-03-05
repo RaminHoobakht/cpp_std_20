@@ -10,7 +10,6 @@
 #define SEP         util::separator()
 
 namespace util {
-
     constexpr size_t zero{0LU};
 
     void separator(size_t, char) noexcept;
@@ -22,8 +21,6 @@ namespace util {
         }
         std::cout << NL;
     }
-
-
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */
