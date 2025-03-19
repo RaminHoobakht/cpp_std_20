@@ -35,11 +35,11 @@ printf '%s\n' "#ifndef HEADER_MAIN_CPP
 
 #include <iostream>
 
-#define NL          '\n'
-#define RT          '\r'
-#define SP          '\x20'
-#define LINEFEED    std::cout << NL
-#define SEP         util::separator()
+#define NL '\n'
+#define RT '\r'
+#define SP '\x20'
+#define LINEFEED std::cout << NL
+#define SEP util::separator()
 
 namespace util {
     constexpr size_t zero{0LU};
