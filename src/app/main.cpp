@@ -1,25 +1,11 @@
-#include "../header/main.hpp"
 #include <iostream>
+#include "../header/main.hpp"
 
 
 int main() {
 
-    std::string name{"12345678901234567890"};
-    const char *text{"I am C++ Developer..."};
-
-    name.insert(5, text, 18);
-    std::cout << "value of name is: " << name << NL;
-
-    LINEFEED;
-    util::separator();
-
-    name.clear();
-    name = "12345678901234567890";
-    name.insert(5, text);
-
-    std::cout << "value of name is: " << name << NL;
 
 
-    std::cout << "\n #(16:08:36): The End ..." << std::endl;
+    std::cout << "\n #(17:40:26): The End ..." << std::endl;
     return EXIT_SUCCESS;
 }
