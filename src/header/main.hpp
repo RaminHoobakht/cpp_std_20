@@ -2,6 +2,7 @@
 #define HEADER_MAIN_CPP
 
 #include <iostream>
+#include <string>
 
 #define NL '\n'
 #define RT '\r'
@@ -14,6 +15,8 @@ namespace util {
 
     void separator(size_t, char) noexcept;
 
+    std::string &trim(std::string &str, bool right, bool left) noexcept;
+
 
     inline void separator(const size_t no = 64LU,
                           const char ch = '-') noexcept {
@@ -22,6 +25,25 @@ namespace util {
         }
         std::cout << NL;
     }
+
+    inline std::string &trim(std::string &str, const bool right,
+                             const bool left) noexcept {
+
+        if (right) {
+            while (str[0] < 33) {
+                str.erase(0, 1);
+            }
+        }
+
+        if (left) {
+            while (str[str.size() - 1] < 33) {
+                str.erase(str.size() - 1, 1);
+            }
+        }
+
+        return str;
+    }
+
 
     /* -------------------------------------------------- */
 
