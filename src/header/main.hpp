@@ -18,16 +18,15 @@ namespace util {
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
 
-    inline void separator(const size_t no = 64LU,
-                          const char ch = '-') noexcept {
+    void separator(const size_t no = 64LU, const char ch = '-') noexcept {
         for (size_t i{zero}; i < no; ++i) {
             std::cout << ch;
         }
         std::cout << NL;
     }
 
-    inline std::string &trim(std::string &str, const bool right,
-                             const bool left) noexcept {
+    std::string &trim(std::string &str, const bool right,
+                      const bool left) noexcept {
 
         if (right) {
             while (str[0] < 33) {
