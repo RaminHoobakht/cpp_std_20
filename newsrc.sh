@@ -18,12 +18,13 @@ mkdir src/header
 
 now="$(date +"%T")"
 
-printf '%s\n' "#include <iostream>
-#include \"../header/main.hpp\"
+printf '%s\n' "/*  */
+
+#include "../header/main.hpp"
+#include <iostream>
 
 
 int main() {
-
 
 
     std::cout << \"\n #($now): The End ...\" << std::endl;
