@@ -50,7 +50,7 @@ namespace util {
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
 
-    inline void separator(const size_t no = 64LU,
+    void separator(const size_t no = 64LU,
                           const char ch = '-') noexcept {
         for (size_t i{zero}; i < no; ++i) {
             std::cout << ch;
@@ -58,7 +58,7 @@ namespace util {
         std::cout << NL;
     }
 
-    inline std::string &trim(std::string &str, const bool right,
+    std::string &trim(std::string &str, const bool right,
                              const bool left) noexcept {
 
         if (right) {
