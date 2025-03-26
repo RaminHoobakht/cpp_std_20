@@ -53,6 +53,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -v -fPIC -fPIE -m64 -march=corei7-avx  "
 add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
         src/header/main.hpp
+        src/header/compare.hpp
+        src/header/compare.cpp
 )
 
 # This project will output an static library file
