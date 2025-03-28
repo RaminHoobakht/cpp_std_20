@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_PROJECT_NAME cpp_std_20)
+set(CMAKE_PROJECT_NAME cpp_test)
 set(CMAKE_PROJECT_VERSION 1)
 set(CMAKE_PROJECT_VERSION_MAJOR 0)
 set(CMAKE_PROJECT_VERSION_MINOR 1)
@@ -52,7 +52,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -v -fPIC -fPIE -m64 -march=corei7-avx  "
 
 add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
-        src/header/main.hpp
+        src/header/utillib.hpp
+        src/header/utillib.cpp
+        src/header/test.hpp
+        src/header/test.cpp
 )
 
 # This project will output an static library file
@@ -126,6 +129,9 @@ find_library(PQX_LIBRARY pqxx)
 if (PQX_LIBRARY)
     target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${PQX_LIBRARY})
 endif ()
+
+find_package(Python3 COMPONENTS Interpreter Development)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Python3::Python)
 
 # Create a simple configuration header
 # configure_file(config.h.in config.h)
