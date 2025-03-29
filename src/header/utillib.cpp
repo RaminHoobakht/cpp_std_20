@@ -1,25 +1,9 @@
-#ifndef HEADER_MAIN_CPP
-#define HEADER_MAIN_CPP
-
-#include <iostream>
-#include <string>
-
-#define NL '\n'
-#define RT '\r'
-#define SP '\x20'
-#define LINEFEED std::cout << NL
-#define SEP util::separator()
+#include "../header/utillib.hpp"
 
 namespace util {
-    constexpr size_t zero{0LU};
-
-    void separator(size_t, char) noexcept;
-
-    std::string &trim(std::string &str, bool right, bool left) noexcept;
 
 
-    void separator(const size_t no = 64LU,
-                          const char ch = '-') noexcept {
+    void separator(const size_t no = 64LU, const char ch = '-') noexcept {
         for (size_t i{zero}; i < no; ++i) {
             std::cout << ch;
         }
@@ -27,7 +11,7 @@ namespace util {
     }
 
     std::string &trim(std::string &str, const bool right,
-                             const bool left) noexcept {
+                      const bool left) noexcept {
 
         if (right) {
             while (str[0] < 33) {
@@ -65,6 +49,5 @@ namespace util {
             return this->message_.c_str();
         }
     };
-} // namespace util
 
-#endif /* HEADER_MAIN_CPP */
+} // namespace util
