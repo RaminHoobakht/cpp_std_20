@@ -51,7 +51,7 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    void separator(size_t, char) noexcept;
+    void separator(const size_t no = 64LU, const char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
@@ -70,7 +70,7 @@ printf '%s\n' "#include \"../header/utillib.hpp\"
 namespace util {
 
 
-    void separator(const size_t no = 64LU, const char ch = '-') noexcept {
+    void separator(const size_t no, const char ch) noexcept {
         for (size_t i{zero}; i < no; ++i) {
             std::cout << ch;
         }

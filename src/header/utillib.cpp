@@ -3,7 +3,7 @@
 namespace util {
 
 
-    void separator(const size_t no = 64LU, const char ch = '-') noexcept {
+    void separator(const size_t no, const char ch) noexcept {
         for (size_t i{zero}; i < no; ++i) {
             std::cout << ch;
         }
@@ -50,4 +50,4 @@ namespace util {
         }
     };
 
-} // namespace util 
+} // namespace util

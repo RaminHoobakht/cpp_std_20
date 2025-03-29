@@ -16,14 +16,14 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    void separator(size_t, char) noexcept;
+    void separator(const size_t no = 64LU, const char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
     /* -------------------------------------------------- */
 
     class publicexception;
-    
+
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */
