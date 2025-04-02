@@ -28,7 +28,7 @@ namespace util {
     /* -------------------------------------------------- */
 
     class publicexception;
-    
+
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */
