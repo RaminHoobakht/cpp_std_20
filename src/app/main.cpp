@@ -3,7 +3,8 @@
 #include <iostream>
 #include "../header/utillib.hpp"
 
-const double *find_maximum(const double scores[], size_t size) noexcept;
+const double *find_maximum(const double scores[], const size_t size) noexcept;
+void display_array(const double arr[], const size_t size) noexcept;
 
 int main() {
 
@@ -11,16 +12,22 @@ int main() {
                      96.23,   102.325,      82.25,         69.36, 998.336,
                      874.259, 1024.9558899, 1023.369852147};
 
-    size_t array_size{std::size(numbers)};
-    const double *result{find_maximum(numbers, array_size)};
+    /* ------------- */
 
+
+    size_t array_size{std::size(numbers)};
+    display_array(numbers, array_size);
+    const double *result{find_maximum(numbers, array_size)};
     std::cout << "value of result is: " << *result << NL;
+    util::separator();
 
     std::cout << "\n #(14:46:02): The End ..." << std::endl;
     return EXIT_SUCCESS;
 }
 
-const double *find_maximum(const double scores[], size_t size) noexcept {
+/* ------------------------------- */
+
+const double *find_maximum(const double scores[], const size_t size) noexcept {
 
     double max{0.0};
     size_t index{util::zero};
@@ -33,4 +40,13 @@ const double *find_maximum(const double scores[], size_t size) noexcept {
     }
 
     return &scores[index];
+}
+
+/* ------------------------------- */
+
+void display_array(const double arr[], const size_t size) noexcept {
+    for (size_t i{util::zero}; i < size; ++i) {
+        std::cout << *(arr + i) << SP;
+    }
+    LINEFEED;
 }
