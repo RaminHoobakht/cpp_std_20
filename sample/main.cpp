@@ -1,7 +1,7 @@
 /* using resize function in string class */
 
-#include "../header/main.hpp"
 #include <iostream>
+#include "../header/utillib.hpp"
 
 
 int main() {

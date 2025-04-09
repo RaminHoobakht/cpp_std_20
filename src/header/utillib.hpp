@@ -1,6 +1,7 @@
 #ifndef HEADER_MAIN_CPP
 #define HEADER_MAIN_CPP
 
+#include <cstddef>
 #include <iostream>
 #include <string>
 
@@ -22,14 +23,14 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    void separator(const size_t no = 64LU, const char ch = '-') noexcept;
+    void separator(size_t no = 64LU, char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
     /* -------------------------------------------------- */
 
     class publicexception;
-    
+
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */
