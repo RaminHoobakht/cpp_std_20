@@ -16,6 +16,8 @@ int main() {
     double &some_var_ref{some_var};
     auto y{some_var_ref};
 
+    ++y;
+
     out << "size of some_var    : " << sizeof(some_var) << NL;
     out << "sizeof some_var_ref : " << sizeof(some_var_ref) << NL;
     out << "sizeof y            : " << sizeof(y) << NL;
