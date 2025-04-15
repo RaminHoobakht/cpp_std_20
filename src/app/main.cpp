@@ -1,7 +1,15 @@
-/*  */
+/*
+    function overloading
+    overload can be occur by:
 
-#include "../header/utillib.hpp"
+    - parameters ordering.
+    - difference number parameters.
+    - changing data-type.
+
+*/
+
 #include <iostream>
+#include "../header/utillib.hpp"
 
 #define out std::cout
 #define log std::clog
