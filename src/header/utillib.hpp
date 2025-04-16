@@ -1,17 +1,24 @@
 #ifndef HEADER_MAIN_CPP
 #define HEADER_MAIN_CPP
 
-#include <iostream>
 #include <ios>
+#include <iostream>
 #include <string>
 
 constexpr char NL{'\n'};
 constexpr char RT{'\r'};
 constexpr char SP{'\x20'};
 
-#define out                                                                        std::cout << std::fixed;                                                       std::cout << SP
-#define log                                                                        std::cout << std::fixed;                                                       std::clog << SP
-#define err                                                                        std::cout << std::fixed;                                                       std::cerr << SP
+#define out                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::cout << SP
+#define log                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::clog << SP
+#define err                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::cerr << SP
+#define end std::endl
 
 #define LF std::cout << NL
 #define SEP util::separator()

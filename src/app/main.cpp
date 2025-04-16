@@ -1,12 +1,12 @@
 /*  */
 
-#include "../header/utillib.hpp"
 #include <iostream>
+#include "../header/utillib.hpp"
 
 
 int main() {
 
 
-    std::cout << "\n #(20:43:24): The End ..." << std::endl;
-    return (EXIT_SUCCESS);
+    out << "\n #(20:43:24): The End ..." << NL;
+    return EXIT_SUCCESS;
 }
