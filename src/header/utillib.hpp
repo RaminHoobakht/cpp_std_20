@@ -4,12 +4,14 @@
 #include <iostream>
 #include <string>
 
-static constexpr char NL{'\n'};
-static constexpr char RT{'\r'};
-static constexpr char SP{'\x20'};
+constexpr char NL{'\n'};
+constexpr char RT{'\r'};
+constexpr char SP{'\x20'};
 
 #define LF std::cout << NL
 #define SEP util::separator()
+#define LF_SEP util::lf_separator()
+#define LF_SEP_LF util::lf_separator_lf()
 
 using str = std::string;
 using cstr = const std::string;
@@ -22,14 +24,16 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    void separator(const size_t no = 64LU, const char ch = '-') noexcept;
+    void separator(size_t no = 64LU, char ch = '-') noexcept;
+    void lf_separator(size_t no = 64LU, char ch = '-') noexcept;
+    void lf_separator_lf(size_t no = 64LU, char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
     /* -------------------------------------------------- */
 
     class publicexception;
-    
+
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */
