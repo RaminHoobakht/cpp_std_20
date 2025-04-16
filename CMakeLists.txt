@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_PROJECT_NAME cpp_std_20)
+set(CMAKE_PROJECT_NAME cpp_result)
 set(CMAKE_PROJECT_VERSION 1)
 set(CMAKE_PROJECT_VERSION_MAJOR 0)
 set(CMAKE_PROJECT_VERSION_MINOR 1)
@@ -21,7 +21,7 @@ set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_DEFAULT 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_DEFAULT 26)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -127,6 +127,9 @@ find_library(PQX_LIBRARY pqxx)
 if (PQX_LIBRARY)
     target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${PQX_LIBRARY})
 endif ()
+
+find_package(Python3 COMPONENTS Interpreter Development)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Python3::Python)
 
 # Create a simple configuration header
 # configure_file(config.h.in config.h)
