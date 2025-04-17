@@ -1,6 +1,2 @@
-/*   */
 
 #include "../header/utillib.hpp"
-
-
-
