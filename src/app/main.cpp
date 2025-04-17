@@ -8,6 +8,11 @@ int main() {
 
     int result{add_number(12)};
     out << "value of number is: " << result << NL;
+    SEP;
+
+    out << "(1 + 2 + 3 .... 100) equals: " << add_number(100) << NL;
+    SEP;
+
 
     out << "\n #(11:57:21): The End ..." << end;
     return EXIT_SUCCESS;
