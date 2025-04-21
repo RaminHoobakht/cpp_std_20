@@ -1,4 +1,4 @@
-/*   */
+/* functio template:  */
 
 #include "main.hpp"
 
