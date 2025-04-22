@@ -5,7 +5,6 @@
 
 int main() {
 
-
-    out << "\n #(20:10:06): The End ..." << eln;
+    out << "\n #(00:00:00): The End ..." << eln;
     return EXIT_SUCCESS;
 }

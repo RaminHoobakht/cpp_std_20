@@ -1,11 +1,9 @@
-#include "../header/cpptrain.hpp"
+#include "cpptrain.hpp"
 
 /* definition */
 namespace cpp {
 
+   
 
 
 } // namespace cpp
-
-
-
