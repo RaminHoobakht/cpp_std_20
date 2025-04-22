@@ -4,7 +4,8 @@
 /* declaration */
 namespace cpp {
 
+  
 
 } // namespace cpp
 
-#endif /* HEADER_CPP_TRAIN_HPP */
+#endif
