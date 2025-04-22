@@ -1,6 +1,10 @@
-/*   */
+/*  two function template respectively by value
+    and by reference parameters passing aside
+    each other */
+
 
 #include "main.hpp"
+
 
 
 int main() {
@@ -9,3 +13,4 @@ int main() {
     out << "\n #(18:31:38): The End ..." << eln;
     return EXIT_SUCCESS;
 }
+

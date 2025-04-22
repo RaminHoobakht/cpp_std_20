@@ -54,7 +54,9 @@ add_executable(${CMAKE_PROJECT_NAME}
     src/app/main.hpp        
     src/app/main.cpp
     src/header/utillib.hpp
-    src/header/utillib.cpp)
+    src/header/utillib.cpp
+    src/header/cpptrain.hpp
+)
 
 # This project will output an static library file
 # add_library(${CMAKE_PROJECT_NAME} STATIC
