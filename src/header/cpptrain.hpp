@@ -4,7 +4,13 @@
 /* declaration */
 namespace cpp {
 
-  
+    template<typename T>
+    T maximum(T a, T b) noexcept;
+
+
+    template<typename T>
+    const T &maximum(const T &a, const T &b) noexcept;
+
 
 } // namespace cpp
 
