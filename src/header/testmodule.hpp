@@ -4,13 +4,7 @@
 /* declaration */
 namespace cpp {
 
-    template<typename returnType, typename T, typename P>
-    returnType maximum(T a, P b) noexcept;
 
-    template<typename returnType, typename T, typename P>
-    returnType maximum(T a, P b) noexcept {
-        return (a > b) ? a : b;
-    }
 
 } // namespace cpp
 
