@@ -46,7 +46,6 @@ namespace util {
         return str;
     }
 
-
     /* -------------------------------------------------- */
 
     class publicexception final : public std::exception {
@@ -68,4 +67,4 @@ namespace util {
         }
     };
 
-} // namespace util 
+} // namespace util
