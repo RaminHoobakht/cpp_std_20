@@ -17,7 +17,7 @@ constexpr char SP{'\x20'};
     std::cout << SP
 #define log                                                                    \
     std::cout << std::fixed;                                                   \
-    std::clog << SP 
+    std::clog << SP
 #define err                                                                    \
     std::cout << std::fixed;                                                   \
     std::cerr << SP
