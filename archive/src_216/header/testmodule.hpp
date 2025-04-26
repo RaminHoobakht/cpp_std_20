@@ -4,7 +4,12 @@
 /* declaration */
 namespace cpp {
 
-  
+    auto sum(auto a, auto b) noexcept;
+
+    auto sum(auto a, auto b) noexcept {
+        return a + b;
+    }
+
 
 } // namespace cpp
 
