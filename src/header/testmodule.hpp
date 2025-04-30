@@ -4,7 +4,7 @@
 /* declaration */
 namespace cpp {
 
-
+  
 
 } // namespace cpp
 

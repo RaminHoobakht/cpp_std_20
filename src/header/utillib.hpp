@@ -11,10 +11,19 @@ constexpr char NL{'\n'};
 constexpr char RT{'\r'};
 constexpr char SP{'\x20'};
 
-#define out                                                                        std::cout << std::boolalpha;                                                   std::cout << std::fixed;                                                       std::cout << SP
-#define log                                                                        std::cout << std::fixed;                                                       std::clog << SP
-#define err                                                                        std::cout << std::fixed;                                                       std::cerr << SP
-#define eln	std::endl    
+#define PI (3.141592653589793238462643383279502884197)
+
+#define out                                                                    \
+    std::cout << std::boolalpha;                                               \
+    std::cout << std::fixed;                                                   \
+    std::cout << SP
+#define log                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::clog << SP
+#define err                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::cerr << SP
+#define eln std::endl
 #define cin std::cin
 
 #define LF std::cout << NL

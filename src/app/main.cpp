@@ -1,11 +1,10 @@
-/* Subject: using concepts for more than one constrains  */
+/* Subject:   */
 
 #include "main.hpp"
 
 
 int main() {
 
-
-    out << "\n #(16:26:40): The End ..." << eln;
+    out << "\n #(00:00:00): The End ..." << eln;
     return EXIT_SUCCESS;
 }
