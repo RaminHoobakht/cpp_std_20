@@ -8,6 +8,23 @@
 /* declaration */
 namespace cpp {
 
+
+    class raphael {
+
+    private:
+        signed long long int number_{};
+
+    public:
+        raphael() noexcept;
+        explicit raphael(const signed long long int number) noexcept;
+        [[maybe_unused]] [[nodiscard]] signed long long int
+        get_number() const noexcept;
+        [[maybe_unused]] [[nodiscard]] signed long long int
+        get_number() noexcept;
+        // [[maybe_unused]] [[nodiscard]] signed long long int get_number();
+    };
+
+
     class user {
 
     private:

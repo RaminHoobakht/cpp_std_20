@@ -7,6 +7,37 @@
 /* definition */
 namespace cpp {
 
+
+    raphael::raphael() noexcept {
+        /* code  */
+        out << "Hello I am raphael ..." << NL;
+    }
+
+    raphael::raphael(const signed long long int number) noexcept {
+        this->number_ = number;
+    }
+
+    /* const and noexcept are elements to create function overload */
+    /* with const and noexcept  */
+    signed long long int raphael::get_number() const noexcept {
+        return this->number_;
+    }
+
+    /* const and noexcept are elements to create function overload */
+    /* without const and with noexcept  */
+    signed long long int raphael::get_number() noexcept {
+        return this->number_;
+    }
+
+    /* it cannot overload without const and noexcept */
+    // signed long long int raphael::get_number() {
+    //     /* code */
+    //     return this->number_;
+    // }
+
+
+    /* -------------------------------------- */
+
     /* constructors */
 
     user::user() noexcept {
