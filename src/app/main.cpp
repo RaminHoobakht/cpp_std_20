@@ -1,18 +1,12 @@
-/* Subject: constant member class */
+/* Subject:   */
 
 #include "main.hpp"
 
 
 int main() {
 
-    LF;
+	LF;
 
-    cpp::raphael my_raphael{1000};
-
-    auto result{my_raphael.get_number()};
-    out << "value of result is: " << result << NL;
-
-
-    out << "\n #(04:55:59: The End ..." << eln;
+    out << "\n #(05:45:01): The End ..." << eln;
     return EXIT_SUCCESS;
 }
