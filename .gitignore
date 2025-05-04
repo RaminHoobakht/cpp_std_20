@@ -40,3 +40,8 @@
 *.txt
 *.user
 
+# eclipse setting files
+/.settings/
+.cproject
+.project
+.clangd
