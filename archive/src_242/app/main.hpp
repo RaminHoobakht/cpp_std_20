@@ -1,6 +1,5 @@
 /*   */
 
-
 #pragma once
 
 #include "../header/testmodule.hpp"

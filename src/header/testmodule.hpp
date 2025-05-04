@@ -4,20 +4,6 @@
 /* declaration */
 namespace cpp {
 
-    class raphael final {
-
-    private:
-        int x{};
-        int y{};
-        int z{};
-        mutable int counter{};
-
-    public:
-        raphael() noexcept;
-        ~raphael() noexcept;
-
-        [[maybe_unused]] void display_info() const noexcept;
-    };
 
 
 } // namespace cpp
