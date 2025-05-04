@@ -15,10 +15,17 @@ constexpr char SP{'\x20'};
 #define Phi (1.61803398875)
 #define e (2.7182818284590452353602874713527)
 
-#define out                                                                        std::cout << std::boolalpha;                                                   std::cout << std::fixed;                                                       std::cout << SP
-#define log                                                                        std::cout << std::fixed;                                                       std::clog << SP
-#define err                                                                        std::cout << std::fixed;                                                       std::cerr << SP
-#define eln	std::endl    
+#define out                                                                    \
+    std::cout << std::boolalpha;                                               \
+    std::cout << std::fixed;                                                   \
+    std::cout << SP
+#define log                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::clog << SP
+#define err                                                                    \
+    std::cout << std::fixed;                                                   \
+    std::cerr << SP
+#define eln std::endl
 #define cin std::cin
 
 #define LF std::cout << NL
