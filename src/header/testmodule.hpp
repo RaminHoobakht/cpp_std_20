@@ -4,14 +4,6 @@
 /* declaration */
 namespace cpp {
 
-    struct point {
-        double x{};
-        double y{};
-    };
-
-
-    void print_pointer(point point_param) noexcept;
-    void print_pointer(double x, double y) noexcept;
 
 
 } // namespace cpp
