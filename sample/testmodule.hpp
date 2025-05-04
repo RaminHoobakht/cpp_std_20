@@ -37,9 +37,16 @@ namespace cpp {
 
         /* operator overloading */
         user &operator=(const user &rhs) noexcept = default;
-        
+
         [[maybe_unused]] void print_info() const noexcept;
     };
+
+    void display_user_info_by_val(user usr) noexcept;
+    void display_user_info_const_by_val(user usr) noexcept;
+    void display_user_info_by_ref(user &usr) noexcept;
+    void display_user_info_const_by_ref(const user &usr) noexcept;
+    void display_user_info_by_pointer(user *usr) noexcept;
+    void display_user_info_by_const_pointer(const user *usr) noexcept;
 
 
 } // namespace cpp
