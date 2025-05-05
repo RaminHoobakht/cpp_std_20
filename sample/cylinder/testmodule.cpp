@@ -7,18 +7,14 @@
 namespace cpp {
 
     cylinder::cylinder(const double radius_param,
-                       const double height_param) noexcept :
-        base_radius_(radius_param), height_(height_param) {
-        LF;
-        out << "Hello I am cylinder. I initialized ..." << NL;
-        LF;
+                       const double height_param) noexcept {
+        this->base_radius_ = radius_param;
+        this->height_ = height_param;
     }
 
     cylinder::~cylinder() noexcept {
         /* code */
-        LF;
         out << "Good Bay cylinder ..." << NL;
-        LF;
     }
 
     void cylinder::set_base_radius(const double radius_param) noexcept {
