@@ -137,8 +137,9 @@ namespace entity {
 
     void person::display_person() const noexcept {
         out << std::format(
-                R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{}\n)",
+                R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{})",
                 "{", person_id_, first_name_, last_name_, age_, "}");
+                out << "->" << this << NL;
     }
 
 } // namespace entity
