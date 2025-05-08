@@ -1,7 +1,6 @@
-#include "cylinder_headers.hpp"
-#include "../../../sample_src/entity/cylinder/cylinder.hpp"
+#include "cylinder.hpp"
 
-#include "../../../sample_src/entity/cylinder/cylinder_headers.hpp"
+#include "cylinder_headers.hpp"
 
 
 /* definition */

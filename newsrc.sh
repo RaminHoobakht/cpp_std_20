@@ -17,7 +17,7 @@ mkdir archive/src_"$file_no"
 cp -r src/* archive/src_"$file_no"/
 cp -r CMakeLists.txt archive/src_"$file_no"/
 
-cp -r sample/cmake_default.txt CMakeLists.txt
+cp -r sample/sample_src/cmake_default.txt CMakeLists.txt
 #cp -r sample/sample_src/app/* src/app/
 
 ### ----------------------------------------------

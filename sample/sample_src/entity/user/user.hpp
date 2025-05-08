@@ -1,7 +1,7 @@
 #ifndef HEADER_TEST_MODULE_HPP
 #define HEADER_TEST_MODULE_HPP
 
-#include "../../../sample_src/entity/user/user_headers.hpp"
+#include "user_headers.hpp"
 
 /* declaration */
 namespace entity {

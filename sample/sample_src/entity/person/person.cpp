@@ -1,4 +1,4 @@
-#include "../../../sample_src/entity/person/person.hpp"
+#include "person.hpp"
 
 
 /* definition */
