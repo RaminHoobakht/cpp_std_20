@@ -1,6 +1,6 @@
 /* Subject:   */
 
-#include "../../sample_src/app/main.hpp"
+#include "main.hpp"
 
 
 int main() {

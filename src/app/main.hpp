@@ -2,5 +2,5 @@
 
 #pragma once
 
-#include "../../sample_src/header/testmodule.hpp"
-#include "../../sample_src/header/utillib.hpp"
+#include "../header/testmodule.hpp"
+#include "../header/utillib.hpp"
