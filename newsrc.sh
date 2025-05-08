@@ -24,20 +24,21 @@ cp -r sample/sample_src/cmake_default.txt CMakeLists.txt
 
 now="$(date +"%T")"
 
-printf '%s\n' "/* Subject:  */
+# printf '%s\n' "/* Subject:  */
 
-#include \"main.hpp\"
-
-
-int main() {
-
-    LF;
+# #include \"main.hpp\"
 
 
-    out << \"\n #($now): The End ...\" << eln;
-    return EXIT_SUCCESS;
-}" > src/app/main.cpp
+# int main() {
 
+#     LF;
+
+
+#     out << \"\n #($now): The End ...\" << eln;
+#     return EXIT_SUCCESS;
+# }" > src/app/main.cpp
+
+printf '%s\n' "($now)" >> src/app/main.cpp
 
 ### ----------------------------------------------
 
