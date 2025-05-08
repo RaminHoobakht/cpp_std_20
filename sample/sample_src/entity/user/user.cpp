@@ -1,11 +1,8 @@
-#include "testmodule.hpp"
-#include <string_view>
-
-#include "utillib.hpp"
+#include "../../../sample_src/entity/user/user.hpp"
 
 
 /* definition */
-namespace cpp {
+namespace entity {
 
     /* constructors */
 
@@ -124,4 +121,4 @@ namespace cpp {
         usr->set_user_id(115599LU)->set_username(un)->set_password(pw);*/
     }
 
-} // namespace cpp
+} // namespace entity

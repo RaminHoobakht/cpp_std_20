@@ -1,10 +1,11 @@
-#include "testmodule.hpp"
+#include "cylinder_headers.hpp"
+#include "../../../sample_src/entity/cylinder/cylinder.hpp"
 
-#include "utillib.hpp"
+#include "../../../sample_src/entity/cylinder/cylinder_headers.hpp"
 
 
 /* definition */
-namespace cpp {
+namespace entity {
 
     cylinder::cylinder(const double radius_param,
                        const double height_param) noexcept {
@@ -40,4 +41,4 @@ namespace cpp {
         return result;
     }
 
-} // namespace cpp
+} // namespace entity

@@ -1,12 +1,10 @@
 #ifndef HEADER_TEST_MODULE_HPP
 #define HEADER_TEST_MODULE_HPP
 
-
-#include <string>
-#include <string_view>
+#include "../../../sample_src/entity/user/user_headers.hpp"
 
 /* declaration */
-namespace cpp {
+namespace entity {
 
     class user {
 
@@ -49,6 +47,6 @@ namespace cpp {
     void display_user_info_by_const_pointer(const user *usr) noexcept;
 
 
-} // namespace cpp
+} // namespace entity
 
 #endif /* HEADER_TEST_MODULE_HPP */

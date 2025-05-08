@@ -1,8 +1,8 @@
-#include "testmodule.hpp"
+#include "person.hpp"
 
 
 /* definition */
-namespace cpp {
+namespace entity {
 
     person::person() noexcept {
         /* code */
@@ -12,7 +12,7 @@ namespace cpp {
     person::person(uint person_id_param) noexcept :
         person("", "", person_id_param, 0) {
         /* code */
-        out << "Hello, I am person class one ..." << NL;
+        out << "Hello, I am person class 1 ..." << NL;
     }
 
     person::person(uint person_id_param,
@@ -50,7 +50,7 @@ namespace cpp {
         person_id_(std::exchange(rhs.person_id_, 0)),
         age_(std::exchange(rhs.person_id_, 0)) {
         /* code */
-        out << "Hello I am person move constructor ..." << NL;
+        out << "Hello, I am person move constructor ..." << NL;
     }
 
     person::~person() noexcept {
@@ -133,5 +133,12 @@ namespace cpp {
         return os;
     }
 
+    /* ------------------------------------ */
 
-} // namespace cpp
+    void person::display_person() const noexcept {
+        out << std::format(
+                R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{}\n)",
+                "{", person_id_, first_name_, last_name_, age_, "}");
+    }
+
+} // namespace entity

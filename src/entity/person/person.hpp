@@ -1,16 +1,10 @@
 #ifndef HEADER_TEST_MODULE_HPP
 #define HEADER_TEST_MODULE_HPP
 
-#include <format>
-#include <ostream>
-#include <string>
-#include <string_view>
-#include <utility>
-#include "utillib.hpp"
-
+#include "person_headers.hpp"
 
 /* declaration */
-namespace cpp {
+namespace entity {
 
     class person {
 
@@ -54,10 +48,13 @@ namespace cpp {
 
         /* --------------------------- */
 
-
         friend std::ostream &operator<<(std::ostream &os, person &rhs) noexcept;
+
+        /* --------------------------- */
+
+        void display_person() const noexcept;
     };
 
-} // namespace cpp
+} // namespace entity
 
 #endif /* HEADER_TEST_MODULE_HPP */

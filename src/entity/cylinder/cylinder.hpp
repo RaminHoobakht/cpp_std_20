@@ -2,7 +2,7 @@
 #define HEADER_TEST_MODULE_HPP
 
 /* declaration */
-namespace cpp {
+namespace entity {
 
     class cylinder final {
 
@@ -27,6 +27,6 @@ namespace cpp {
     };
 
 
-} // namespace cpp
+} // namespace entity
 
 #endif /* HEADER_TEST_MODULE_HPP */
