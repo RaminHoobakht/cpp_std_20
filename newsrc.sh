@@ -17,8 +17,8 @@ mkdir archive/src_"$file_no"
 cp -r src/* archive/src_"$file_no"/
 cp -r CMakeLists.txt archive/src_"$file_no"/
 
-cp -r sample/sample_src/cmake_default.txt CMakeLists.txt
-#cp -r sample/sample_src/app/* src/app/
+# cp -r sample/sample_src/cmake_default.txt CMakeLists.txt
+# cp -r sample/sample_src/app/* src/app/
 
 ### ----------------------------------------------
 
@@ -38,7 +38,7 @@ now="$(date +"%T")"
 #     return EXIT_SUCCESS;
 # }" > src/app/main.cpp
 
-printf '%s\n' "($now)" >> src/app/main.cpp
+printf '%s\n' "\n //($now)" >> src/app/main.cpp
 
 ### ----------------------------------------------
 

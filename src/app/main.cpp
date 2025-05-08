@@ -8,23 +8,25 @@ int main() {
 
     LF;
     person p1{"Raphael", "Green", 1001, 25};
-    SEP;
-
     person p2{"Samuel", "Brown", 1002, 32};
-    SEP;
-
     person p3{"Daniel", "Black", 1003, 41};
+
+    [[maybe_unused]] person students_by_value[3]{p1, p2, p3};
+    [[maybe_unused]] person *students_by_pointer[3]{&p1, &p2, &p3};
+
+    LF;
+
+    for (person &item: students_by_value) {
+        out << item << NL;
+    }
     SEP;
 
-    person students[3]{p1, p2, p3};
+
+    for (person *item: students_by_pointer) {
+        out << *item << NL;
+    }
     SEP;
 
-    p1.set_age(120);
-    p1.display_person();
-    students[0].display_person();
-
-
-    out << "\n #(22:31:16): The End ..." << eln;
+    out << "\n #(02:02:34): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-(02:02:34)
