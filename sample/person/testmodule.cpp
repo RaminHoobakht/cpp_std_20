@@ -1,91 +1,136 @@
 #include "testmodule.hpp"
 
 
-#include "utillib.hpp"
-
-
 /* definition */
 namespace cpp {
 
     person::person() noexcept {
-        /* hello message */
+        /* code */
         out << "Hello, I am person class ..." << NL;
     }
 
-    person::person(ulli person_id, std::string_view first_name,
-                   std::string_view last_name, uint age) noexcept {
-        this->person_id_ = person_id;
-        this->first_name_ = first_name;
-        this->last_name_ = last_name;
-        this->age_ = age;
+    person::person(uint person_id_param) noexcept :
+        person("", "", person_id_param, 0) {
+        /* code */
+        out << "Hello, I am person class one ..." << NL;
+    }
+
+    person::person(uint person_id_param,
+                   std::string_view first_name_param) noexcept :
+        person(first_name_param, "", person_id_param, 0) {
+        out << "Hello, I am person class 2 ..." << NL;
+    }
+
+    person::person(uint person_id_param, std::string_view first_name_param,
+                   std::string_view last_name_param) noexcept :
+        person(first_name_param, last_name_param, person_id_param, 0) {
+        /* code */
+        out << "Hello, I am person class 3 ..." << NL;
+    }
+
+    person::person(std::string_view first_name_param,
+                   std::string_view last_name_param, uint person_id_param,
+                   uint age_param) noexcept :
+        first_name_(first_name_param), last_name_(last_name_param),
+        person_id_(person_id_param), age_(age_param) {
+        /* code */
+        out << "I am person class 4 ..." << NL;
+    }
+
+    person::person(const person &rhs) noexcept :
+        first_name_(rhs.first_name_), last_name_(rhs.first_name_),
+        person_id_(rhs.person_id_), age_(rhs.age_) {
+        /* code */
+        out << "Hello, I am person copy constructor ..." << NL;
+    }
+
+    person::person(person &&rhs) noexcept :
+        first_name_(std::exchange(rhs.first_name_, "")),
+        last_name_(std::exchange(rhs.last_name_, "")),
+        person_id_(std::exchange(rhs.person_id_, 0)),
+        age_(std::exchange(rhs.person_id_, 0)) {
+        /* code */
+        out << "Hello I am person move constructor ..." << NL;
     }
 
     person::~person() noexcept {
+        out << "Goodbye person, see you later ..." << NL;
+    }
+
+
+    /* ------------------------------------ */
+
+    void person::set_person_id(uint person_id_param) noexcept {
         /* code */
-        out << "Good Bay person ..." << NL;
+        person_id_ = person_id_param;
     }
 
-    ulli &person::person_id() noexcept {
+    void person::set_first_name(std::string_view first_name_param) noexcept {
         /* code */
-        return this->person_id_;
+        first_name_ = first_name_param;
     }
 
-    std::string &person::fist_name() noexcept {
+    void person::set_last_name(std::string_view last_name_param) noexcept {
         /* code */
-        return this->first_name_;
+        last_name_ = last_name_param;
     }
 
-    std::string &person::last_name() noexcept {
+    void person::set_age(uint age_param) noexcept {
         /* code */
-        return this->last_name_;
+        age_ = age_param;
     }
 
-    uint &person::age() noexcept {
+    uint person::get_person_id() const noexcept {
         /* code */
-        return this->age_;
+        return person_id_;
     }
 
-    const ulli &person::person_id() const noexcept {
+    const std::string &person::get_first_name() const noexcept {
         /* code */
-        return this->person_id_;
+        return first_name_;
     }
 
-    const std::string &person::fist_name() const noexcept {
+    const std::string &person::get_last_name() const noexcept {
         /* code */
-        return this->first_name_;
+        return last_name_;
     }
 
-    const std::string &person::last_name() const noexcept {
+    uint person::get_age() const noexcept {
         /* code */
-        return this->last_name_;
+        return age_;
     }
 
-    const uint &person::age() const noexcept {
-        /* code */
-        return this->age_;
+    /* ------------------------------------ */
+
+    person &person::operator=(const person &rhs) noexcept {
+        if (this != &rhs) {
+            first_name_ = rhs.first_name_;
+            last_name_ = rhs.last_name_;
+            person_id_ = rhs.person_id_;
+            age_ = rhs.age_;
+        }
+        return *this;
+    }
+
+    person &person::operator=(person &&rhs) noexcept {
+        if (this != &rhs) {
+            first_name_ = std::exchange(rhs.first_name_, "");
+            first_name_ = std::exchange(rhs.last_name_, "");
+            person_id_ = std::exchange(rhs.person_id_, 0);
+            person_id_ = std::exchange(rhs.age_, 0);
+        }
+        return *this;
     }
 
 
-    void person::display_info() noexcept {
-        out << "person id : " << this->person_id() << NL;
-        out << "first name: " << this->fist_name() << NL;
-        out << "last name : " << this->last_name() << NL;
-        out << "age       : " << this->age() << NL;
-    }
+    /* ------------------------------------ */
 
-    void person::display_info() const noexcept {
-        out << "person id : " << this->person_id() << NL;
-        out << "first name: " << this->fist_name() << NL;
-        out << "last name : " << this->last_name() << NL;
-        out << "age       : " << this->age() << NL;
-    }
-
-    const std::string &person::get_info() const noexcept {
-        std::string info{"user id: " + std::to_string(this->person_id_) +
-                         " first name: " + this->first_name_ +
-                         " last name: " + this->last_name_ +
-                         "age: " + std::to_string(this->age_)};
-        return info;
+    std::ostream &operator<<(std::ostream &os, person &rhs) noexcept {
+        os << std::format(
+                R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{})",
+                "{", rhs.person_id_, rhs.first_name_, rhs.last_name_, rhs.age_,
+                "}");
+        return os;
     }
 
 
