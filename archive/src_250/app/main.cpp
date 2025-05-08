@@ -30,4 +30,3 @@ int main() {
     out << "\n #(02:02:34): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-\n //(02:25:13)
