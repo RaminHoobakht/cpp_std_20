@@ -12,7 +12,7 @@ git commit -m 'before creating new source file'
 
 ### ----------------------------------------------
 
-cp -r src/* archive/src_"$file_no"
+cp -r src/* archive/src_"$file_no"/
 cp -r CMakeLists.txt archive/src_"$file_no"/
 
 cp -r sample/cmake_default.txt CMakeLists.txt
