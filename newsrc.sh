@@ -18,11 +18,26 @@ cp -r src/* archive/src_"$file_no"/
 cp -r CMakeLists.txt archive/src_"$file_no"/
 
 cp -r sample/cmake_default.txt CMakeLists.txt
-cp -r sample/sample_src/app/* src/app/
+#cp -r sample/sample_src/app/* src/app/
 
 ### ----------------------------------------------
 
 now="$(date +"%T")"
+
+printf '%s\n' "/* Subject:  */
+
+#include \"main.hpp\"
+
+
+int main() {
+
+    LF;
+
+
+    out << \"\n #($now): The End ...\" << eln;
+    return EXIT_SUCCESS;
+}" > src/app/main.cpp
+
 
 ### ----------------------------------------------
 
