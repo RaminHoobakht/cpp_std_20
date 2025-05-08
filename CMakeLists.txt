@@ -57,9 +57,6 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/header/utillib.cpp
         src/header/testmodule.hpp
         src/header/testmodule.cpp
-        src/entity/person/person_headers.hpp
-        src/entity/person/person.hpp
-        src/entity/person/person.cpp
 )
 
 # This project will output an static library file

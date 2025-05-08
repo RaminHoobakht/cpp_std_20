@@ -2,6 +2,5 @@
 
 #pragma once
 
-#include "../entity/person/person.hpp"
-#include "../header/testmodule.hpp"
-#include "../header/utillib.hpp"
+#include "../../sample_src/header/testmodule.hpp"
+#include "../../sample_src/header/utillib.hpp"
