@@ -1,28 +1,24 @@
-/* Subject: using move constructor */
+/* Subject:  */
 
 #include "main.hpp"
 
-using person = entity::person;
+using point = entity::point;
 
 int main() {
 
-    person *person_one{new person{"Hinata", "Chikao", 1001, 54}};
-    person_one->display_person();
+    point point_one{new double{12.36}, new double{52.14}};
+
+    out << "before -> point one: " << point_one << NL;
     SEP;
 
-    person *person_two{new person{std::move(*person_one)}};
+    point point_two{std::move(point_one)};
+
+    out << "after -> point one: " << point_one << NL;
     SEP;
 
-    person_two->display_person();
+    out << "point two: " << point_two << NL;
     SEP;
 
-    person_one->display_person();
-    SEP;
-
-    delete person_one;
-    delete person_two;
-
-    out << "\n #(02:25:13): The End ..." << eln;
+    out << "\n #(05:37:40): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-\n //(05:37:40)

@@ -55,9 +55,9 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
         src/util/utillib.hpp
         src/util/utillib.cpp
-        src/entity/person/person_headers.hpp
-        src/entity/person/person.hpp
-        src/entity/person/person.cpp
+        src/entity/point/point_headers.hpp
+        src/entity/point/point.hpp
+        src/entity/point/point.cpp
         
 )
 

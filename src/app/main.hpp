@@ -2,5 +2,5 @@
 
 #pragma once
 
-#include "../entity/person/person.hpp"
+#include "../entity/point/point.hpp"
 #include "../util/utillib.hpp"
