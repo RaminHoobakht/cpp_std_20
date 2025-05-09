@@ -1,7 +1,6 @@
 #include "user.hpp"
 
 
-/* definition */
 namespace entity {
 
     /* constructors */

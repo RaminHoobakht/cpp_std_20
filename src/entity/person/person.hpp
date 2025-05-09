@@ -1,9 +1,10 @@
 #ifndef HEADER_TEST_MODULE_HPP
 #define HEADER_TEST_MODULE_HPP
 
+#pragma once
+
 #include "person_headers.hpp"
 
-/* declaration */
 namespace entity {
 
     class person {

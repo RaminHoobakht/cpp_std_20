@@ -1,6 +1,8 @@
 #ifndef HEADER_MAIN_CPP
 #define HEADER_MAIN_CPP
 
+#pragma once
+
 #include <cstring>
 #include <ios>
 #include <iostream>

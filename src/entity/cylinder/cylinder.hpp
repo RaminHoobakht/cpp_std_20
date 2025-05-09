@@ -1,7 +1,8 @@
 #ifndef HEADER_TEST_MODULE_HPP
 #define HEADER_TEST_MODULE_HPP
 
-/* declaration */
+#pragma once
+
 namespace entity {
 
     class cylinder final {

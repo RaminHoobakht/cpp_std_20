@@ -1,7 +1,6 @@
 #include "person.hpp"
 
 
-/* definition */
 namespace entity {
 
     person::person() noexcept {

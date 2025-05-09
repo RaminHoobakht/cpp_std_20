@@ -1,6 +1,8 @@
 #ifndef HEADER_POINT_HPP
 #define HEADER_POINT_HPP
 
+#pragma once
+
 #include "point_headers.hpp"
 
 namespace entity {

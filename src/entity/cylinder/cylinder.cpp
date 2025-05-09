@@ -3,7 +3,6 @@
 #include "cylinder_headers.hpp"
 
 
-/* definition */
 namespace entity {
 
     cylinder::cylinder(const double radius_param,
