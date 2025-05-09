@@ -14,6 +14,7 @@ namespace entity {
     public:
         point() noexcept;
         point(double *x, double *y) noexcept;
+        point(std::initializer_list<double> list) noexcept;
         point(const point &rhs) noexcept;
         point(point &&rhs) noexcept;
         ~point() noexcept;
@@ -35,6 +36,5 @@ namespace entity {
 
 
 } // namespace entity
-
 
 #endif

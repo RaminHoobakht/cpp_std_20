@@ -1,6 +1,7 @@
 #include "point.hpp"
 
 namespace entity {
+
     point::point() noexcept {
         /* code */
         out << "I am point class ..." << NL;
@@ -83,4 +84,5 @@ namespace entity {
         os << std::format(R"({}"x":{}, "y":{}{})", "{", rhs_x, rhs_y, "}");
         return os;
     }
+
 } // namespace entity

@@ -1,4 +1,4 @@
-/* Subject:  */
+/* Subject: initializer list for constructor */
 
 #include "main.hpp"
 
@@ -6,21 +6,10 @@ using point = entity::point;
 
 int main() {
 
-    point point_one{new double{12.36}, new double{52.14}};
+    point point_one{{123.36, 563.258}};
 
-    out << "before -> point one: " << point_one << NL;
-    SEP;
+    out << point_one << NL;
 
-    point point_two{std::move(point_one)};
-
-    out << "after -> point one: " << point_one << NL;
-    SEP;
-
-    out << "point two: " << point_two << NL;
-    SEP;
-
-    out << "\n #(05:37:40): The End ..." << eln;
+    out << "\n #(18:02:03): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(18:02:03)

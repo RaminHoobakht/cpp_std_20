@@ -11,25 +11,24 @@ namespace entity {
         out << "I am point class (2) ..." << NL;
     }
 
+    point::point(std::initializer_list<double> list) noexcept {
+        x_ = new double{*(list.begin())};
+        y_ = new double{*(list.begin() + 1)};
+        out << "I am initializer list of point class ..." << NL;
+    }
+
+
     point::point(const point &rhs) noexcept :
         x_(new double{*(rhs.x_)}), y_(new double{*(rhs.y_)}) {
         /* code */
         out << "I am copy constructor ..." << NL;
     }
 
-    // point::point(point &&rhs) noexcept :
-    //     x_(std::exchange(rhs.x_, new double{0.0})),
-    //     y_(std::exchange(rhs.y_, new double{0.0})) {
-    //     /* code */
-    //     out << "I am move constructor ..." << NL;
-    // }
-
     point::point(point &&rhs) noexcept :
         x_(std::exchange(rhs.x_, nullptr)), y_(std::exchange(rhs.y_, nullptr)) {
         /* code */
         out << "I am move constructor ..." << NL;
     }
-
 
     point::~point() noexcept {
         /* code */
