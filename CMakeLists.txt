@@ -57,9 +57,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
         src/util/utillib.hpp
         src/util/utillib.cpp
-        src/entity/component/component.hpp
-        src/entity/component/component.cpp
-        
+        src/entity/dog/dog.hpp
+        src/entity/dog/dog.cpp
 )
 
 # This project will output an static library file
