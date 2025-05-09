@@ -13,5 +13,3 @@ int main() {
     out << "\n #(18:02:03): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(19:27:08)
