@@ -38,7 +38,7 @@ now="$(date +"%T")"
 #     return EXIT_SUCCESS;
 # }" > src/app/main.cpp
 
-printf '%s\n' "\n //($now)" >> src/app/main.cpp
+printf '%s\n' "\\n //($now)" >> src/app/main.cpp
 
 ### ----------------------------------------------
 

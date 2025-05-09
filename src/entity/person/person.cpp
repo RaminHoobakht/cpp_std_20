@@ -148,7 +148,7 @@ namespace entity {
         out << std::format(
                 R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{})",
                 "{", person_id_, first_name_, last_name_, age_, "}");
-        out << "->" << this << NL;
+        out << "-> " << this << NL;
     }
 
 } // namespace entity
