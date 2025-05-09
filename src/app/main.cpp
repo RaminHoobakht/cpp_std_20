@@ -1,17 +1,19 @@
-/* Subject: initializer list for constructor */
+/* Subject:  */
 
 #include "main.hpp"
 
-using point = entity::point;
+using component = entity::component;
 
 int main() {
 
-    point point_one{{123.36, 563.258}};
+    LF;
+    component component_one{.x = 120.36, .y = 66.52, .z = 896.785};
 
-    out << point_one << NL;
+    out << "value of x is: " << component_one.x << NL;
+    out << "value of y is: " << component_one.y << NL;
+    out << "value of z is: " << component_one.z << NL;
+    SEP;
 
-    out << "\n #(18:02:03): The End ..." << eln;
+    out << "\n #(19:27:08): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(19:27:08)

@@ -27,6 +27,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+#Werror=narrowing
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++26 -O0 -g3 -pthread -lpthread ")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wall -Wextra -Wconversion ")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align -Wcast-qual -Wdisabled-optimization ")
@@ -55,9 +57,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
         src/util/utillib.hpp
         src/util/utillib.cpp
-        src/entity/point/point_headers.hpp
-        src/entity/point/point.hpp
-        src/entity/point/point.cpp
+        src/entity/component/component.hpp
+        src/entity/component/component.cpp
         
 )
 
