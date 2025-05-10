@@ -51,5 +51,3 @@ int main() {
 //     out << my_raphael.y << NL;
 //     out << my_raphael.z << NL;
 // }
-
-//(12:02:02)
