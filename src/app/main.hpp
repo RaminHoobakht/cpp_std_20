@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "../entity/dog/dog.hpp"
 #include "../util/utillib.hpp"
 
 #endif /* HEADER_MAIN_HPP */
