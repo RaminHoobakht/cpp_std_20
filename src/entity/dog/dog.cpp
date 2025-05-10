@@ -14,10 +14,9 @@ namespace entity {
 
 
     void display_dog_info(const dog &rhs) noexcept {
-        out << std::format(R"({}"dog_name_":"{}",
-             "dog_breed_":"{}", "dog_age_":{}{})",
-                           "{", rhs.dog_name_, rhs.dog_breed_, rhs.dog_age_,
-                           "}")
+        out << std::format(
+                       R"({}"dog_name_":"{}", "dog_breed_":"{}","dog_age_":{}{})",
+                       "{", rhs.dog_name_, rhs.dog_breed_, rhs.dog_age_, "}")
             << NL;
     }
 
