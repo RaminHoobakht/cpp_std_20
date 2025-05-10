@@ -15,7 +15,7 @@ namespace entity {
         uint dog_age_{};
         uint padding{};
         friend void display_dog_info(const dog &rhs) noexcept;
-        friend void display_dog_info_() noexcept;
+        friend void display_dog_info() noexcept;
 
     public:
         dog() noexcept = delete;
