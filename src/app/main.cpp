@@ -7,8 +7,7 @@ namespace cpp {
     class one final {
 
     private:
-        /* A static const variable: it can initial in header and in constructor
-           by initializer list. it must be initial in somewhere out of class.
+        /* A static const variable: it can initial in header.
          */
         static const int x_{15};
 
@@ -38,7 +37,7 @@ namespace cpp {
         return one::x_;
     }
 
-    /* int cpp::one::x_{0}; */
+    /* int cpp::one::x_{0};  */
 
 } // namespace cpp
 
