@@ -7,6 +7,8 @@
 #include <format>
 #include <ostream>
 #include <utility>
+#include <cmath>
+#include <stdfloat>
 #include "../../util/utillib.hpp"
 
 #endif

@@ -12,6 +12,9 @@ namespace entity {
     private:
         double *x_{};
         double *y_{};
+        static uint point_count_;
+        [[maybe_unused]] uint padding1{};
+        [[maybe_unused]] uint padding2{};
 
     public:
         point() noexcept;
@@ -26,6 +29,12 @@ namespace entity {
 
         [[nodiscard]] double *get_x() const noexcept;
         [[nodiscard]] double *get_y() const noexcept;
+
+        [[nodiscard]] std::float128_t distance() const noexcept;
+
+        [[maybe_unused]] [[nodiscard]] inline static uint point_cout() noexcept{
+            return point_count_;
+        }
 
         point &operator=(const point &rhs) noexcept;
         point &operator=(point &&rhs) noexcept;

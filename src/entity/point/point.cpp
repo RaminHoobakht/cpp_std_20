@@ -3,17 +3,20 @@
 namespace entity {
     point::point() noexcept {
         /* code */
+        point_count_++;
         out << "I am point class ..." << NL;
     }
 
     point::point(double *x, double *y) noexcept : x_(x), y_(y) {
         /* code */
+        point_count_++;
         out << "I am point class (2) ..." << NL;
     }
 
     point::point(std::initializer_list<double> list) noexcept {
         x_ = new double{*(list.begin())};
         y_ = new double{*(list.begin() + 1)};
+        point_count_++;
         out << "I am initializer list of point class ..." << NL;
     }
 
@@ -21,6 +24,7 @@ namespace entity {
     point::point(const point &rhs) noexcept :
         x_(new double{*(rhs.x_)}), y_(new double{*(rhs.y_)}) {
         /* code */
+        point_count_++;
         out << "I am copy constructor ..." << NL;
     }
 
@@ -34,6 +38,7 @@ namespace entity {
         /* code */
         delete x_;
         delete y_;
+        point_count_--;
         out << "Goodbye point ..." << NL;
     }
 
@@ -56,6 +61,18 @@ namespace entity {
         /* code */
         return y_;
     }
+
+    std::float128_t point::distance() const noexcept {
+        /* code */
+        std::float128_t result =
+                powf128((*x_ - 0.0), 2) + powf128((*y_ - 0.0), 2);
+        return sqrtf128(result);
+    }
+
+    // uint point::point_cout() noexcept {
+    //     /* code */
+    //     return point_count_;
+    // }
 
     point &point::operator=(const point &rhs) noexcept {
         if (this != &rhs) {
@@ -82,4 +99,6 @@ namespace entity {
         os << std::format(R"({}"x":{}, "y":{}{})", "{", rhs_x, rhs_y, "}");
         return os;
     }
+
+    uint point::point_count_{0U};
 } // namespace entity
