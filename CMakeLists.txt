@@ -57,9 +57,6 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
         src/util/utillib.hpp
         src/util/utillib.cpp
-        src/entity/point/point_headers.hpp
-        src/entity/point/point.hpp
-        src/entity/point/point.cpp
 )
 
 # This project will output an static library file
