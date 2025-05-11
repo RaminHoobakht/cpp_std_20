@@ -1,76 +1,50 @@
-/* Subject:  */
+/* Subject: static constant pre C++17 -> normal variable */
 
 #include "main.hpp"
 
 namespace cpp {
-    class raphael final {
+
+    class one final {
+
     private:
-        double x_;
-        double y_;
-
-        /* only in C++17 and later, it is possible inline static variable
-           to avoid initializing static variable out of the class. */
-        inline static uint raphael_count_{};
-
-        /* using inline static const in a private section */
-        // inline static const uint code_one{120};
-
-        /* up line can be changed to below line */
-        static constexpr uint code_one{120};
+        /* a normal variable */
+        int x_{};
 
     public:
-        raphael() = delete;
-
-        raphael(double x_param, double y_param) noexcept;
-
-        ~raphael() noexcept;
-
-        void display_raphael() const noexcept;
-
-        static inline uint count() noexcept { return raphael_count_; }
-
-        /* using inline static const in a public section */
-        // inline static const uint code_two{220};
-
-        /* up line can be changed to the below line. */
-        static constexpr uint code_two{220};
+        [[nodiscard]] explicit one(const int x_param) noexcept;
+        ~one() noexcept;
+        inline void set_x(int x_param) noexcept;
+        [[nodiscard]] inline int get_x() const noexcept;
     };
 
 
-    raphael::raphael(const double x_param, const double y_param) noexcept :
-        x_(x_param), y_(y_param) {
+    one::one(const int x_param) noexcept : x_{x_param} {
         /* code */
-        ++raphael_count_;
-        out << "I am raphael constructor ..." << NL;
+        out << "class one constructor ..." << NL;
     }
 
-    raphael::~raphael() noexcept {
-        --raphael_count_;
-        out << "Goodbye raphael ..." << NL;
+    one::~one() noexcept { out << "Goodbye ..." << NL; }
+
+    inline void one::set_x(int x_param) noexcept {
+        /* code  */
+        x_ = x_param;
     }
 
-    void raphael::display_raphael() const noexcept {
-        out << " X: " << x_ << NL;
-        out << " Y: " << y_ << NL;
+    inline int one::get_x() const noexcept {
+        /* code */
+        return x_;
     }
+
+
 } // namespace cpp
 
 
 int main() {
     LF;
 
-    cpp::raphael raphael_one{10.23, 32.56};
+    cpp::one my_one{120};
+    out << my_one.get_x() << NL;
 
-    out << "count is   : " << cpp::raphael::count() << NL;
-
-    /* code_one is inaccessible duo to it placed in a private section */
-    // out << "code one is: " << cpp::raphael::code_one << NL;
-
-    out << "code two is: " << cpp::raphael::code_two << NL;
-
-
-    out << "\n #(17:36:17): The End ..." << eln;
+    out << "\n #(18:09:03): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(18:09:03)
