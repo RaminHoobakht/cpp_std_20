@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.31)
 
 set(CMAKE_PROJECT_NAME cpp_result)
 set(CMAKE_PROJECT_VERSION 1)
@@ -57,6 +57,9 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/app/main.cpp
         src/util/utillib.hpp
         src/util/utillib.cpp
+        src/entity/point2/point2_headers.hpp
+        src/entity/point2/point2.hpp
+        src/entity/point2/point2.cpp
 )
 
 # This project will output an static library file
@@ -132,7 +135,7 @@ if (PQX_LIBRARY)
 endif ()
 
 find_package(Python3 COMPONENTS Interpreter Development)
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Python3::Python)
+#target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Python3::Python)
 
 # Create a simple configuration header
 # configure_file(config.h.in config.h)
