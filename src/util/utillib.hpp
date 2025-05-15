@@ -17,14 +17,14 @@ constexpr char SP{'\x20'};
 #define Phi (1.61803398875)
 #define e (2.7182818284590452353602874713527)
 
-#define out                                                                    \
+#define pout                                                                   \
     std::cout << std::boolalpha;                                               \
     std::cout << std::fixed;                                                   \
     std::cout << SP
-#define log                                                                    \
+#define plog                                                                   \
     std::cout << std::fixed;                                                   \
     std::clog << SP
-#define err                                                                    \
+#define perr                                                                   \
     std::cout << std::fixed;                                                   \
     std::cerr << SP
 #define eln std::endl
@@ -34,11 +34,6 @@ constexpr char SP{'\x20'};
 #define SEP util::separator()
 #define LF_SEP util::lf_separator()
 #define LF_SEP_LF util::lf_separator_lf()
-
-using str = std::string;
-using cstr = const std::string;
-using rstr = std::string &;
-using crstr = const std::string &;
 
 namespace util {
 

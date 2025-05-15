@@ -3,21 +3,21 @@
 namespace entity {
 
     point2::point2() noexcept : point2(0.0, 0.0) {
-        out << "default constructor ..." << NL;
+        pout << "default constructor ..." << NL;
     }
 
     point2::point2(const double x_param, const double y_param) noexcept :
         x_(x_param), y_(y_param) {
         /* code */
-        out << "constructor two ..." << NL;
+        pout << "constructor two ..." << NL;
     }
 
     point2::point2(double xy_coord) noexcept : point2(xy_coord, 0) {
-        out << "constructor one ..." << NL;
+        pout << "constructor one ..." << NL;
     }
 
     point2::point2(const point2 &rhs) noexcept : point2(rhs.x_, rhs.y_) {
-        out << "copy constructor ..." << NL;
+        pout << "copy constructor ..." << NL;
     }
 
     long double point2::length() const noexcept {

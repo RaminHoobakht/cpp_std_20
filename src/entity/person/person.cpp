@@ -5,30 +5,30 @@ namespace entity {
 
     person::person() noexcept {
         /* code */
-        out << "Hello, I am person class ..." << NL;
+        pout << "Hello, I am person class ..." << NL;
     }
 
     person::person(uint person_id_param) noexcept :
         person("", "", person_id_param, 0) {
         /* code */
-        out << "Hello, I am person class. constructor (1) ..." << NL;
+        pout << "Hello, I am person class. constructor (1) ..." << NL;
     }
 
     person::person(uint person_id_param,
                    std::string_view first_name_param) noexcept :
         person(first_name_param, "", person_id_param, 0) {
-        out << std::format(R"(Hello, I am {} {}. from constructor (2).)",
-                           first_name_, last_name_)
-            << NL;
+        pout << std::format(R"(Hello, I am {} {}. from constructor (2).)",
+                            first_name_, last_name_)
+             << NL;
     }
 
     person::person(uint person_id_param, std::string_view first_name_param,
                    std::string_view last_name_param) noexcept :
         person(first_name_param, last_name_param, person_id_param, 0) {
         /* code */
-        out << std::format(R"(Hello, I am {} {}. from constructor (3).)",
-                           first_name_, last_name_)
-            << NL;
+        pout << std::format(R"(Hello, I am {} {}. from constructor (3).)",
+                            first_name_, last_name_)
+             << NL;
     }
 
     person::person(std::string_view first_name_param,
@@ -37,17 +37,17 @@ namespace entity {
         first_name_(first_name_param), last_name_(last_name_param),
         person_id_(person_id_param), age_(age_param) {
         /* code */
-        out << std::format(R"(Hello, I am {} {}. from constructor (4).)",
-                           first_name_, last_name_)
-            << NL;
+        pout << std::format(R"(Hello, I am {} {}. from constructor (4).)",
+                            first_name_, last_name_)
+             << NL;
     }
 
     person::person(const person &rhs) noexcept :
         person(rhs.first_name_, rhs.last_name_, rhs.person_id_, rhs.age_) {
         /* code */
-        out << std::format(R"(Hello, I am {} {}. from copy constructor.)",
-                           first_name_, last_name_)
-            << NL;
+        pout << std::format(R"(Hello, I am {} {}. from copy constructor.)",
+                            first_name_, last_name_)
+             << NL;
     }
 
     person::person(person &&rhs) noexcept :
@@ -56,13 +56,13 @@ namespace entity {
         person_id_(std::exchange(rhs.person_id_, 0)),
         age_(std::exchange(rhs.person_id_, 0)) {
         /* code */
-        out << "Hello, I am person move constructor ..." << NL;
+        pout << "Hello, I am person move constructor ..." << NL;
     }
 
     person::~person() noexcept {
-        out << std::format(R"(Goodbye {} {}. See you later.)", first_name_,
-                           last_name_)
-            << NL;
+        pout << std::format(R"(Goodbye {} {}. See you later.)", first_name_,
+                            last_name_)
+             << NL;
     }
 
 
@@ -144,10 +144,10 @@ namespace entity {
     /* ------------------------------------ */
 
     void person::display_person() const noexcept {
-        out << std::format(
+        pout << std::format(
                 R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{})",
                 "{", person_id_, first_name_, last_name_, age_, "}");
-        out << "-> " << this << NL;
+        pout << "-> " << this << NL;
     }
 
 } // namespace entity

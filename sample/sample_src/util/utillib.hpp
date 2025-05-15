@@ -25,7 +25,7 @@ constexpr char SP{'\x20'};
 #define err                                                                    \
     std::cout << std::fixed;                                                   \
     std::cerr << SP
-#define eln std::endl
+#define enl std::endl
 #define cin std::cin
 
 #define LF std::cout << NL

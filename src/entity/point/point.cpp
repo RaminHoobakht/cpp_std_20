@@ -4,20 +4,20 @@ namespace entity {
     point::point() noexcept {
         /* code */
         point_count_++;
-        out << "I am point class ..." << NL;
+        pout << "I am point class ..." << NL;
     }
 
     point::point(double *x, double *y) noexcept : x_(x), y_(y) {
         /* code */
         point_count_++;
-        out << "I am point class (2) ..." << NL;
+        pout << "I am point class (2) ..." << NL;
     }
 
     point::point(std::initializer_list<double> list) noexcept {
         x_ = new double{*(list.begin())};
         y_ = new double{*(list.begin() + 1)};
         point_count_++;
-        out << "I am initializer list of point class ..." << NL;
+        pout << "I am initializer list of point class ..." << NL;
     }
 
 
@@ -25,13 +25,13 @@ namespace entity {
         x_(new double{*(rhs.x_)}), y_(new double{*(rhs.y_)}) {
         /* code */
         point_count_++;
-        out << "I am copy constructor ..." << NL;
+        pout << "I am copy constructor ..." << NL;
     }
 
     point::point(point &&rhs) noexcept :
         x_(std::exchange(rhs.x_, nullptr)), y_(std::exchange(rhs.y_, nullptr)) {
         /* code */
-        out << "I am move constructor ..." << NL;
+        pout << "I am move constructor ..." << NL;
     }
 
     point::~point() noexcept {
@@ -39,7 +39,7 @@ namespace entity {
         delete x_;
         delete y_;
         point_count_--;
-        out << "Goodbye point ..." << NL;
+        pout << "Goodbye point ..." << NL;
     }
 
     [[maybe_unused]] void point::set_x(double *x) noexcept {
@@ -69,7 +69,7 @@ namespace entity {
         return sqrtf128(result);
     }
 
-    // uint point::point_cout() noexcept {
+    // uint point::point_cpout() noexcept {
     //     /* code */
     //     return point_count_;
     // }

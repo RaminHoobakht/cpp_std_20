@@ -13,7 +13,7 @@ namespace entity {
 
     cylinder::~cylinder() noexcept {
         /* code */
-        out << "Good Bay cylinder ..." << NL;
+        pout << "Good Bay cylinder ..." << NL;
     }
 
     void cylinder::set_base_radius(const double radius_param) noexcept {
