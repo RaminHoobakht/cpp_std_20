@@ -25,7 +25,7 @@ option(USE_PYTHON "Enable Python integration" OFF)
 # Project source files
 add_executable(${PROJECT_NAME}
   src/app/main.cpp
-  src/util/utillib.cpp
+  src/util/util.cpp
   src/entity/point2/point2.cpp
 )
 
@@ -88,24 +88,24 @@ if(USE_PYTHON)
   target_link_libraries(${PROJECT_NAME} PRIVATE Python3::Python)
 endif()
 
-# Optional: POCO libraries
-# if(USE_POCO)
-#   find_package(Poco REQUIRED COMPONENTS
-#     Foundation
-#     JSON
-#     Net
-#     XML
-#     Util
-#     NetSSL
-#     Encodings
-#     Crypto
-#     JWT
-#     Data
-#     MongoDB
-#     Redis
-#   )
-#   target_link_libraries(${PROJECT_NAME} PRIVATE Poco::Foundation Poco::JSON Poco::Net Poco::Util Poco::Crypto)
-# endif()
+Optional: POCO libraries
+if(USE_POCO)
+  find_package(Poco REQUIRED COMPONENTS
+    Foundation
+    JSON
+    Net
+    XML
+    Util
+    NetSSL
+    Encodings
+    Crypto
+    JWT
+    Data
+    MongoDB
+    Redis
+  )
+  target_link_libraries(${PROJECT_NAME} PRIVATE Poco::Foundation Poco::JSON Poco::Net Poco::Util Poco::Crypto)
+endif()
 
 # Install instructions
 include(GNUInstallDirs)

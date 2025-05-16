@@ -5,6 +5,6 @@
 
 #include <cstddef>
 #include <cmath>
-#include "../../util/utillib.hpp"
+#include "../../util/util.hpp"
 
 #endif /* HEADERS_POINT_2_HEADERS_HPP */

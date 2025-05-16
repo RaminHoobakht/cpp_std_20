@@ -4,6 +4,6 @@
 #pragma once
 
 #include "../entity/point2/point2.hpp"
-#include "../util/utillib.hpp"
+#include "../util/util.hpp"
 
 #endif /* HEADER_MAIN_HPP */
