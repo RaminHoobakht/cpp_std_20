@@ -29,7 +29,7 @@ namespace entity {
         [[nodiscard]] double get_x() const noexcept;
         [[nodiscard]] double get_y() const noexcept;
 
-        [[nodiscard]] size_t get_point_count() const noexcept;
+        [[nodiscard]] inline static size_t get_point_count() noexcept;
         [[nodiscard]] long double length() const noexcept;
     };
 

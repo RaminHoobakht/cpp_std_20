@@ -11,7 +11,7 @@ int main() {
 
     long double result{my_point.length()};
     pout << "value of result is: " << result << NL;
-
+    SEP;
 
     pout << "\n #(21:04:19): The End ..." << eln;
     return EXIT_SUCCESS;

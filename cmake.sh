@@ -8,8 +8,8 @@
 if [[ $1 == 0 ]]; then
     nice -n 20 ./build/cpp_result
 else
-  nice -n 20 cmake -B build -S .
-  nice -n 20 cmake --build build --config debug --clean-first
+  nice -n 20 cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug
+  nice -n 20 cmake --build build --clean-first
   nice -n 20 printf '\n'
   nice -n 20 printf '\n'
   #nice -n 20 echo "PRESS ANY KEY TO EXECUTE PROGRAM ..."

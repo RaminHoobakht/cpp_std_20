@@ -36,7 +36,7 @@ namespace entity {
 
     /* -------- */
 
-    size_t point2::get_point_count() const noexcept { return point2_count; }
+    inline size_t point2::get_point_count() noexcept { return point2_count; }
 
     /* -------- */
 
