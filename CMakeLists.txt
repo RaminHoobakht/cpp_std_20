@@ -88,7 +88,7 @@ if(USE_PYTHON)
   target_link_libraries(${PROJECT_NAME} PRIVATE Python3::Python)
 endif()
 
-Optional: POCO libraries
+# Optional: POCO libraries
 if(USE_POCO)
   find_package(Poco REQUIRED COMPONENTS
     Foundation
