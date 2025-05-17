@@ -10,6 +10,7 @@ namespace entity {
         x_(x_param), y_(y_param) {
         /* code */
         pout << "constructor two ..." << NL;
+        ++point2_count;
     }
 
     point2::point2(double xy_coord) noexcept : point2(xy_coord, 0) {
@@ -36,8 +37,11 @@ namespace entity {
 
     /* -------- */
 
-    inline size_t point2::get_point_count() noexcept { return point2_count; }
+    size_t point2::get_point_count() noexcept { return point2_count; }
 
     /* -------- */
+
+
+    std::size_t point2::point2_count{0};
 
 } // namespace entity
