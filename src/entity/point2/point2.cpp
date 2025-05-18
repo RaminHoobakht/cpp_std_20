@@ -51,6 +51,6 @@ namespace entity {
     /* -------- */
 
 
-    std::size_t point2::point2_count{0};
+    // std::size_t point2::point2_count{0};
 
 } // namespace entity
