@@ -13,12 +13,17 @@ namespace entity {
         ++point2_count;
     }
 
-    point2::point2(double xy_coord) noexcept : point2(xy_coord, 0) {
+    point2::point2(double xy_coord) noexcept : point2(xy_coord, xy_coord) {
         pout << "constructor one ..." << NL;
     }
 
     point2::point2(const point2 &rhs) noexcept : point2(rhs.x_, rhs.y_) {
         pout << "copy constructor ..." << NL;
+    }
+
+    point2::~point2() noexcept { 
+        pout << "Goodbye Poin2 ..." << NL;
+        --point2_count;
     }
 
     long double point2::length() const noexcept {
@@ -34,6 +39,10 @@ namespace entity {
     double point2::get_x() const noexcept { return x_; }
 
     double point2::get_y() const noexcept { return y_; }
+
+    void point2::print_info() const noexcept {
+        pout << "point2: [&x_ : " << &x_ << ", &y : " << &y_ << " ]" << NL;
+    }
 
     /* -------- */
 

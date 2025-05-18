@@ -22,12 +22,15 @@ namespace entity {
         point2(double x_param, double y_param) noexcept;
         explicit point2(double xy_coord) noexcept;
         point2(const point2 &rhs) noexcept;
+        ~point2() noexcept;
 
         [[maybe_unused]] void set_x(double x_param) noexcept;
         [[maybe_unused]] void set_y(double y_param) noexcept;
 
         [[nodiscard]] double get_x() const noexcept;
         [[nodiscard]] double get_y() const noexcept;
+
+        void print_info() const noexcept;
 
         [[nodiscard]] static size_t get_point_count() noexcept;
         [[nodiscard]] long double length() const noexcept;
