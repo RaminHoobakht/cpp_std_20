@@ -26,14 +26,14 @@ option(USE_PYTHON "Enable Python integration" OFF)
 add_executable(${PROJECT_NAME}
   src/app/main.cpp
   src/util/util.cpp
-  src/entity/point2/point2.cpp
+  src/entity/cylinder/cylinder.cpp
 )
 
 # Add include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
   src/app
   src/util
-  src/entity/point2
+  src/entity/cylinder
 )
 
 # Compiler warnings & flags

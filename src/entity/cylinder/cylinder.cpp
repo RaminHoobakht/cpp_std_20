@@ -1,7 +1,5 @@
 #include "cylinder.hpp"
 
-#include "cylinder_headers.hpp"
-
 
 namespace entity {
 
