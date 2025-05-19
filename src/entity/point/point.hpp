@@ -43,6 +43,9 @@ namespace entity {
                                         const point &rhs) noexcept;
 
         auto operator<=>(const point &rhs) const = default;
+
+    
+
     };
 
 

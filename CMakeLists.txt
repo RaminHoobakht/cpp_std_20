@@ -26,14 +26,12 @@ option(USE_PYTHON "Enable Python integration" OFF)
 add_executable(${PROJECT_NAME}
   src/app/main.cpp
   src/util/util.cpp
-  src/entity/cylinder/cylinder.cpp
 )
 
 # Add include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
   src/app
   src/util
-  src/entity/cylinder
 )
 
 # Compiler warnings & flags
@@ -57,9 +55,11 @@ target_compile_options(${PROJECT_NAME} PRIVATE
   -Wimport -Wwrite-strings -Wvariadic-macros
   -Wmissing-field-initializers -Wmissing-format-attribute
   -Wunused-parameter -Wunreachable-code -Wunused
-  -Wpadded -Wpointer-arith -Wmissing-noreturn
+  -Wpointer-arith -Wmissing-noreturn
   -v -fPIC -fPIE -m64 -march=corei7-avx
 )
+
+#-Wpadded
 
 # Optional: Link math library
 find_library(MATH_LIBRARY m)
