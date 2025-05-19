@@ -1,22 +1,14 @@
-/* static constants */
+/* static constant pre C++17 */
 
 #include "main.hpp"
 
 
-using cylinder = entity::cylinder;
-
 int main() {
     LF;
 
-    cylinder cylinder_one{};
-    auto result = cylinder::default_color;
-    pout << "default color is: " << result << NL;
+        
 
-
-    pout << "\n #(03:01:03): The End ..." << eln;
+    pout << "\n #(17:14:07): The End ..." << eln;
     return EXIT_SUCCESS;
 }
 
-//(17:13:43)
-
-//(17:14:07)
