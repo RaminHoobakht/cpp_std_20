@@ -41,5 +41,3 @@ int add(int a, int b) noexcept {
     /* code */
     return a + b;
 }
-
-//(00:22:55)
