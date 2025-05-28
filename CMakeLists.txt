@@ -25,6 +25,7 @@ option(USE_PYTHON "Enable Python integration" OFF)
 # Project source files
 add_executable(${PROJECT_NAME}
   src/app/main.cpp
+  src/app/some_other.hpp
   src/util/util.cpp
 )
 
