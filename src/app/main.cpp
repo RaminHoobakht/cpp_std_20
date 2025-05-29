@@ -1,45 +1,57 @@
 /*
- *  Subject: multiple definition
+ *  Subject: linkage option:
+ *              - no linkage
+ *              - internal linkage
+ *              - external linkage
+ *              - module linkage
  *
+ *           rules:
+ *              - function local variable has no linkage
+ *              - const global variable has internal linkage
+ *              - non-const global variable has external linkage
+ *              - function has external linkage
  * */
 
 #include "main.hpp"
 
-int add(int a, int b) noexcept;
+void some_function() noexcept;
 
-class raphael final {
+void some_function() noexcept {
+    int age{34}; /* the age has no linkage. because age is local variable */
+    pout << " age: " << age << " &age: " << &age << NL;
+}
 
-private:
-    int x_{};
+/* internal linkage. only visible in this translation unit. */
+const double distance{43.7};
 
-public:
-    raphael(const int x_param) noexcept : x_(x_param) {
-        pout << "Hello Raphael ..." << NL;
-    }
+/* external linkage. it can use in differrnet translation unit */
+int item_count{7};
 
-    int get_x() const noexcept { return x_; }
-};
+/* external linkage. it can use in differrnet translation unit */
+extern void print_distance() noexcept;
+extern void print_item_count() noexcept;
+
+// int age{33};
 
 
 int main() {
 
-    int result{add(150, 600)};
-    pout << "value of result is: " << result << NL;
+    pout << "distance (main): " << distance << " &distance: " << &distance
+         << NL;
     SEP;
 
-    raphael raphael_one{120};
-    pout << "value of raphael is: " << raphael_one.get_x() << NL;
+    print_distance();
     SEP;
 
 
-    pout << "\n #(23:19:08): The End ..." << eln;
+    pout << "item_count (main): " << item_count
+         << " &item_count: " << &item_count << NL;
+    SEP;
+
+    print_item_count();
+    SEP;
+
+
+    pout << "\n #(00:22:55): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-
-int add(int a, int b) noexcept {
-    /* code */
-    return a + b;
-}
-
-//(00:22:55)
