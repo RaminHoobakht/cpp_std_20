@@ -22,9 +22,14 @@ option(USE_POCO "Enable POCO libraries" OFF)
 option(USE_PGSQL "Enable PostgreSQL support" OFF)
 option(USE_PYTHON "Enable Python integration" OFF)
 
+# set(CMAKE_TOOLCHAIN_FILE "")
+# set(CMAKE_C_COMPILER "/usr/bin/gcc-14")
+# set(CMAKE_CXX_COMPILER "/usr/bin/g++-14")
+
 # Project source files
 add_executable(${PROJECT_NAME}
   src/app/main.cpp
+  src/entity/person/person.cpp
   src/util/util.cpp
 )
 
@@ -32,6 +37,7 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE
   src/app
   src/util
+  src/entity/person
 )
 
 # Compiler warnings & flags

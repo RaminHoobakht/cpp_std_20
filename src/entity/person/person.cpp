@@ -1,4 +1,4 @@
-#include "person.hpp"
+#include "src/entity/person/person.hpp"
 
 
 namespace entity {
