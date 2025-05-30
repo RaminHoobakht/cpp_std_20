@@ -1,5 +1,6 @@
 /*
- *  Subject: linkage option:
+ *  Subject: Smart Pointer:
+                - using unique smart pointer.
  *
  * */
 
