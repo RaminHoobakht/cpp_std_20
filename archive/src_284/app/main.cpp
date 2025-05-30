@@ -65,5 +65,3 @@ raphael some_raphael_function(raphael rhs) noexcept {
          << NL;
     return rhs;
 }
-
-//(20:08:09)
