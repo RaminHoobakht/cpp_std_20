@@ -25,7 +25,7 @@ option(USE_PYTHON "Enable Python integration" OFF)
 # Project source files
 add_executable(${PROJECT_NAME}
   src/app/main.cpp
-  src/app/some_other_file.cpp
+  src/entity/person/person.cpp
   src/util/util.cpp
 )
 
@@ -33,6 +33,7 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE
   src/app
   src/util
+  src/entity/person
 )
 
 # Compiler warnings & flags
