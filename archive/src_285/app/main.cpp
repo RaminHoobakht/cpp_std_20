@@ -32,5 +32,3 @@ void some_do_with_person_function(std::unique_ptr<person> prn) noexcept {
     /* code */
     prn->display_person();
 }
-
-//(00:50:51)
