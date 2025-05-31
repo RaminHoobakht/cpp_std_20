@@ -5,30 +5,36 @@
 namespace entity {
 
     person::person() noexcept {
-        /* code */
-        pout << "Hello, I am person class ..." << NL;
+        std::stringstream ss{};
+        ss << this;
+        pout << "Hello, I am person class -> " << ss.str() << NL;
     }
 
     person::person(uint person_id_param) noexcept :
         person("", "", person_id_param, 0) {
-        /* code */
-        pout << "Hello, I am person class. constructor (1) ..." << NL;
+        std::stringstream ss{};
+        ss << this;
+        pout << "Hello, I am person class. constructor (1) -> " << ss.str()
+             << NL;
     }
 
     person::person(uint person_id_param,
                    std::string_view first_name_param) noexcept :
         person(first_name_param, "", person_id_param, 0) {
-        pout << std::format(R"(Hello, I am {} {}. from constructor (2).)",
-                            first_name_, last_name_)
+        std::stringstream ss{};
+        ss << this;
+        pout << std::format("Hello, I am {} {}. from constructor (2) -> {}",
+                            first_name_, last_name_, ss.str())
              << NL;
     }
 
     person::person(uint person_id_param, std::string_view first_name_param,
                    std::string_view last_name_param) noexcept :
         person(first_name_param, last_name_param, person_id_param, 0) {
-        /* code */
-        pout << std::format(R"(Hello, I am {} {}. from constructor (3).)",
-                            first_name_, last_name_)
+        std::stringstream ss{};
+        ss << this;
+        pout << std::format("Hello, I am {} {}. from constructor (3) -> {}",
+                            first_name_, last_name_, ss.str())
              << NL;
     }
 
@@ -37,17 +43,19 @@ namespace entity {
                    uint age_param) noexcept :
         first_name_(first_name_param), last_name_(last_name_param),
         person_id_(person_id_param), age_(age_param) {
-        /* code */
-        pout << std::format(R"(Hello, I am {} {}. from constructor (4).)",
-                            first_name_, last_name_)
+        std::stringstream ss{};
+        ss << this;
+        pout << std::format("Hello, I am {} {}. from constructor (4) -> {}",
+                            first_name_, last_name_, ss.str())
              << NL;
     }
 
     person::person(const person &rhs) noexcept :
         person(rhs.first_name_, rhs.last_name_, rhs.person_id_, rhs.age_) {
-        /* code */
-        pout << std::format(R"(Hello, I am {} {}. from copy constructor.)",
-                            first_name_, last_name_)
+        std::stringstream ss{};
+        ss << this;
+        pout << std::format("Hello, I am {} {}. from copy constructor -> {}",
+                            first_name_, last_name_, ss.str())
              << NL;
     }
 
@@ -56,8 +64,9 @@ namespace entity {
         last_name_(std::exchange(rhs.last_name_, "")),
         person_id_(std::exchange(rhs.person_id_, 0)),
         age_(std::exchange(rhs.person_id_, 0)) {
-        /* code */
-        pout << "Hello, I am person move constructor ..." << NL;
+        std::stringstream ss{};
+        ss << this;
+        pout << "Hello, I am person move constructor -> " << ss.str() << NL;
     }
 
     person::~person() noexcept {
