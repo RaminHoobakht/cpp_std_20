@@ -86,5 +86,3 @@ std::unique_ptr<person> get_person_unique_ptr() noexcept {
     pout << "address of object inside of the function: " << &ramin << NL;
     return ramin;
 }
-
-//(19:21:07)
