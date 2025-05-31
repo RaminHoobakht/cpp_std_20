@@ -1,4 +1,5 @@
-#include "src/entity/person/person.hpp"
+#include "person.hpp"
+#include <sstream>
 
 
 namespace entity {
@@ -60,8 +61,10 @@ namespace entity {
     }
 
     person::~person() noexcept {
-        pout << std::format(R"(Goodbye {} {}. See you later.)", first_name_,
-                            last_name_)
+        std::stringstream ss{};
+        ss << this;
+        pout << std::format("Goodbye {} {}. See you later. -> {}", first_name_,
+                            last_name_, ss.str())
              << NL;
     }
 
@@ -134,20 +137,33 @@ namespace entity {
     /* ------------------------------------ */
 
     std::ostream &operator<<(std::ostream &os, person &rhs) noexcept {
-        os << std::format(
-                R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{})",
-                "{", rhs.person_id_, rhs.first_name_, rhs.last_name_, rhs.age_,
-                "}");
+        std::stringstream ss{};
+        ss << &rhs;
+        os << std::format("\n{}\n"
+                          "    \"person_id_\" :{},\n"
+                          "    \"first_name_\":\"{}\",\n"
+                          "    \"last_name_\" :\"{}\",\n"
+                          "    \"age_\"       :{}\n"
+                          "{} -> {}\n",
+                          " {", rhs.person_id_, rhs.first_name_, rhs.last_name_,
+                          rhs.age_, " }", ss.str());
         return os;
     }
 
     /* ------------------------------------ */
 
     void person::display_person() const noexcept {
-        pout << std::format(
-                R"({}"person_id_":{}, "first_name_":"{}", "last_name_":"{}", "age_":{}{})",
-                "{", person_id_, first_name_, last_name_, age_, "}");
-        pout << "-> " << this << NL;
+        std::stringstream ss{};
+        ss << this;
+        pout << std::format("\n{}\n"
+                            "    \"person_id_\" :{},\n"
+                            "    \"first_name_\":\"{}\",\n"
+                            "    \"last_name_\" :\"{}\",\n"
+                            "    \"age_\"       :{}\n"
+                            "{} -> {}\n",
+                            " {", person_id_, first_name_, last_name_, age_,
+                            " }", ss.str())
+             << NL;
     }
 
 } // namespace entity

@@ -4,8 +4,8 @@
 #pragma once
 
 #include <memory>
-#include "src/entity/person/person.hpp"
-#include "src/util/util.hpp"
+#include "../entity/person/person.hpp"
+#include "../util/util.hpp"
 
 
 #endif /* HEADER_MAIN_HPP */

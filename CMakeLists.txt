@@ -36,36 +36,72 @@ add_executable(${PROJECT_NAME}
 # Add include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
   src/app
-  src/util
   src/entity/person
+  src/util
 )
 
 # Compiler warnings & flags
 target_compile_options(${PROJECT_NAME} PRIVATE
   -std=gnu++26
-  -O0 -g3 -pthread
-  -pedantic -Wall -Wextra -Wconversion
-  -Wcast-align -Wcast-qual -Wdisabled-optimization
-  -Wlogical-op -Wmissing-declarations
-  -Wmissing-include-dirs -Wredundant-decls
-  -Wshadow -Wsign-conversion -Wswitch-default
-  -Wundef -Wfloat-equal -fmessage-length=0
-  -Wctor-dtor-privacy -Wformat=2 -Winit-self
-  -Wnoexcept -Wold-style-cast -Wsign-promo
-  -Woverloaded-virtual -Wstrict-null-sentinel
-  -Wstrict-overflow=5 -Werror -Wno-unused
-  -Weffc++ -Winline -Winvalid-pch -Wstrict-aliasing=2
-  -fstack-protector -Wstack-protector -Wswitch-enum
-  -Wunsafe-loop-optimizations -Wunused-parameter
-  -Wformat-nonliteral -Wformat-security -Wpacked
-  -Wimport -Wwrite-strings -Wvariadic-macros
-  -Wmissing-field-initializers -Wmissing-format-attribute
-  -Wunused-parameter -Wunreachable-code -Wunused
-  -Wpointer-arith -Wmissing-noreturn
-  -v -fPIC -fPIE -m64 -march=corei7-avx
+  -O0 
+  -g3
+  -fmessage-length=0
+  -fstack-protector 
+  -pthread
+  -pedantic 
+  -Wall 
+  -Wextra 
+  -Wconversion
+  -Wcast-align 
+  -Wcast-qual 
+  -Wdisabled-optimization
+  -Wlogical-op 
+  -Wmissing-declarations
+  -Wmissing-include-dirs 
+  -Wredundant-decls
+  -Wshadow 
+  -Wsign-conversion 
+  -Wswitch-default
+  -Wundef 
+  -Wfloat-equal 
+  -Wctor-dtor-privacy 
+  -Wformat=2 
+  -Winit-self
+  -Wnoexcept 
+  -Wold-style-cast 
+  -Wsign-promo
+  -Woverloaded-virtual 
+  -Wstrict-null-sentinel
+  -Wstrict-overflow=5 
+  -Werror 
+  -Wno-unused
+  -Weffc++ 
+  -Winline 
+  -Winvalid-pch 
+  -Wstrict-aliasing=2
+  -Wstack-protector 
+  -Wswitch-enum
+  -Wunsafe-loop-optimizations 
+  -Wunused-parameter
+  -Wformat-nonliteral 
+  -Wformat-security -Wpacked
+  -Wimport -Wwrite-strings 
+  -Wvariadic-macros
+  -Wmissing-field-initializers 
+  -Wmissing-format-attribute
+  -Wunused-parameter 
+  -Wunreachable-code 
+  -Wunused
+  -Wpointer-arith 
+  -Wmissing-noreturn 
+  -Wpadded
+  -v 
+  -fPIC 
+  -fPIE 
+  -m64 
+  -march=corei7-avx
 )
 
-#-Wpadded
 
 # Optional: Link math library
 find_library(MATH_LIBRARY m)
