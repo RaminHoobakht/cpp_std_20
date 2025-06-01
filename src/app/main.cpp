@@ -5,38 +5,34 @@
  * */
 
 #include "main.hpp"
-
+#include <memory>
 
 using person = entity::person;
+
+std::shared_ptr<person> get_shared_pointer() noexcept;
 
 
 int main() {
 
-    // {"Ramin", "Hoobakht", 1001, 64};
-    // person{"Ramin", "Hoobakht", 1001, 64}
+    /* {"Ramin", "Hoobakht", 1001, 64}; */
 
     LF;
 
-    pout << "display from unique smart pointer ..." << NL;
-    std::unique_ptr<person> ramin{
-            std::make_unique<person>("Ramin", "Hoobakht", 1001, 64)};
-    ramin->display_person();
+
+    std::shared_ptr<person> hinata{get_shared_pointer()};
+    pout << "inside the main function: " << NL;
+    hinata->display_person();
     SEP;
 
-    pout << "display from shared smart pointer ..." << NL;
-    std::shared_ptr<person> ramin2{std::move(ramin)};
-    ramin2->display_person();
-    SEP;
-
-    /* encounter with compile time error.
-     * because ramin object is equals to nullptr */
-    pout << "display from unique smart pointer ..." << NL;
-    ramin->display_person();
-    SEP;
-
-
-    pout << "\n #(06:12:52): The End ..." << eln;
+    pout << "\n #(20:15:09): The End ..." << eln;
     return EXIT_SUCCESS;
 }
 
-//(20:15:09)
+std::shared_ptr<person> get_shared_pointer() noexcept {
+    pout << "inside the get_shared_pointer() function: " << NL;
+    std::unique_ptr<person> hinata{
+            std::make_unique<person>("Ramin", "Hoobakht", 1001, 64)};
+    hinata->display_person();
+    SEP;
+    return hinata;
+}
