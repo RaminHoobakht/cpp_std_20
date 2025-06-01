@@ -1,6 +1,6 @@
 /*
  *  Subject: Using Smart Pointer:
- *              - using unique smart pointer with array
+ *              - using shared smart pointer
  *
  * */
 
