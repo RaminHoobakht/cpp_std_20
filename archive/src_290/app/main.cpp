@@ -36,5 +36,3 @@ std::shared_ptr<person> get_shared_pointer() noexcept {
     SEP;
     return hinata;
 }
-
-//(20:33:08)
