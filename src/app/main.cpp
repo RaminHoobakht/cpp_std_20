@@ -15,24 +15,25 @@ int main() {
 
     LF;
 
-    std::shared_ptr<int[]> int_array{new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}};
+    std::shared_ptr<int[]> int_array_one{new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}};
 
     for (int i{0}; i < 9; ++i) {
-        pout << int_array[i] << NL;
+        pout << int_array_one[i] << NL;
+    }
+    SEP;
+
+    std::shared_ptr<int[]> int_array_two{std::make_shared<int[]>(9)};
+
+    for (int i{0}; i < 9; ++i) {
+        int_array_two[i] = i + 10;
     }
 
-    std::shared_ptr<int[]> int_array2{std::make_shared<int[]>(10)};
-
-    for (int i{0}; i < 10; i++) {
-        int_array2[i] = i;
+    for (int i{0}; i < 9; ++i) {
+        pout << int_array_two[i] << NL;
     }
+    SEP;
 
-    for (int i{0}; i < 10; i++) {
-        pout << int_array2[i] << NL;
-    }
 
-    pout << "\n #(20:33:08): The End ..." << eln;
+    pout << "\n #(00:34:18): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(00:34:18)
