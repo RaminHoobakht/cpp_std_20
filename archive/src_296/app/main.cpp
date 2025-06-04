@@ -43,5 +43,3 @@ void some_do_for_person(std::shared_ptr<person> &prn) noexcept {
     pout << "use count is: " << prn.use_count() << NL;
     prn->display_person();
 }
-
-//(03:29:26)
