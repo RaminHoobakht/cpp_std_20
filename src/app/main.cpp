@@ -1,6 +1,7 @@
 /*
  *  Subject: Using Smart Pointer:
  *              - using shared smart pointer with arrays
+ *                person object.
  *
  * */
 
@@ -15,27 +16,29 @@ int main() {
 
     LF;
 
-    std::shared_ptr<int[]> int_array_one{new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}};
 
-    for (int i{0}; i < 9; ++i) {
-        pout << int_array_one[i] << NL;
-    }
+    pout << "creating a shared smart pointer array for three person object ..."
+         << NL;
+    std::shared_ptr<person[]> person_list{new person[3]{}};
     SEP;
 
-    std::shared_ptr<int[]> int_array_two{std::make_shared<int[]>(9)};
-
-    for (int i{0}; i < 9; ++i) {
-        int_array_two[i] = i + 10;
+    pout << "initializing person_list ..." << NL;
+    for (uint i{0}; i < 3; ++i) {
+        person_list[i] =
+                person{"Ramin", "Hoobakht", 1001 + (i * 10), 64 + (i * 10)};
+        SEP;
     }
-
-    for (int i{0}; i < 9; ++i) {
-        pout << int_array_two[i] << NL;
-    }
+    pout << "the end of the initialization ..." << NL;
     SEP;
 
+    pout << "display all member of the person_list in for-loop ..." << NL;
+    for (uint i{0}; i < 3; ++i) {
+        person_list[i].display_person();
+        SEP;
+    }
 
-    pout << "\n #(00:34:18): The End ..." << eln;
+    SEP;
+
+    pout << "\n #(23:18:59): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(23:18:59)
