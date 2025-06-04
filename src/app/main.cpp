@@ -9,7 +9,7 @@
 using person = entity::person;
 
 
-void some_do_for_person(std::shared_ptr<person> prn) noexcept;
+void some_do_for_person(std::shared_ptr<person> &prn) noexcept;
 
 
 int main() {
@@ -34,14 +34,12 @@ int main() {
          << NL;
 
 
-    pout << "\n #(01:12:38): The End ..." << eln;
+    pout << "\n #(03:21:40): The End ..." << eln;
     return EXIT_SUCCESS;
 }
 
-void some_do_for_person(std::shared_ptr<person> prn) noexcept {
-    pout << "inside function: the function: " << NL;
-    pout << "inside function: use count is: " << prn.use_count() << NL;
+void some_do_for_person(std::shared_ptr<person> &prn) noexcept {
+    pout << "inside the function: " << NL;
+    pout << "use count is: " << prn.use_count() << NL;
     prn->display_person();
 }
-
-//(03:21:40)
