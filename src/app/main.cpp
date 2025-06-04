@@ -1,7 +1,6 @@
 /*
  *  Subject: Using Smart Pointer:
- *              - using shared smart pointer with arrays
- *                person object.
+ *              - using shared smart pointer as a function parameter
  *
  * */
 
@@ -10,38 +9,37 @@
 using person = entity::person;
 
 
+void some_do_for_person(std::shared_ptr<person> prn) noexcept;
+
+
 int main() {
 
-    /* {"Ramin", "Hoobakht", 1001, 64}; */
+    /* {"Haruyoshi", "Muratsubaki", 1001, 64}; */
 
     LF;
 
-    pout << "creating person_list for three person object on the heap ... "
+    pout << "inside main: creating muratsubaki person ..." << NL;
+    std::shared_ptr<person> muratsubaki{
+            std::make_shared<person>("Haruyoshi", "Muratsubaki", 1001, 64)};
+    SEP;
+
+    pout << "inside main: muratsubaki of use count is: "
+         << muratsubaki.use_count() << NL;
+    SEP;
+
+    some_do_for_person(muratsubaki);
+    SEP;
+
+    pout << "inside main: muratsubaki use count is: " << muratsubaki.use_count()
          << NL;
-    std::shared_ptr<std::shared_ptr<person>[]> person_list{
-            std::make_shared<std::shared_ptr<person>[]>(3)};
-    SEP;
-
-    pout << "initializing person list by person object that created on the "
-            "heap one by one ..."
-         << NL;
-    for (uint i{0}; i < 3; ++i) {
-        person_list[i] = std::make_shared<person>(
-                "Ramin", "Hoobakht", 1001 + (i * 10), 64 + (i * 10));
-        SEP;
-    }
-    SEP;
-
-    pout << "display all person information ..." << NL;
-    for (uint i{0}; i < 3; ++i) {
-        person_list[i]->display_person();
-        SEP;
-    }
-    SEP;
 
 
-    pout << "\n #(00:51:14): The End ..." << eln;
+    pout << "\n #(01:12:38): The End ..." << eln;
     return EXIT_SUCCESS;
 }
 
-//(01:12:38)
+void some_do_for_person(std::shared_ptr<person> prn) noexcept {
+    pout << "inside function: the function: " << NL;
+    pout << "inside function: use count is: " << prn.use_count() << NL;
+    prn->display_person();
+}
