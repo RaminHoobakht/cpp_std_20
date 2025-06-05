@@ -9,7 +9,7 @@
 using person = entity::person;
 
 
-void some_do_for_person(std::shared_ptr<person> &prn) noexcept;
+void some_do_for_person(const std::shared_ptr<person> &prn) noexcept;
 
 
 int main() {
@@ -18,30 +18,23 @@ int main() {
 
     LF;
 
-    pout << "inside main: creating muratsubaki person ..." << NL;
     std::shared_ptr<person> muratsubaki{
             std::make_shared<person>("Haruyoshi", "Muratsubaki", 1001, 64)};
-    SEP;
-
-    pout << "inside main: muratsubaki of use count is: "
-         << muratsubaki.use_count() << NL;
     SEP;
 
     some_do_for_person(muratsubaki);
     SEP;
 
-    pout << "inside main: muratsubaki use count is: " << muratsubaki.use_count()
-         << NL;
+    muratsubaki->display_person();
+    SEP;
 
-
-    pout << "\n #(03:21:40): The End ..." << eln;
+    pout << "\n #(03:29:26): The End ..." << eln;
     return EXIT_SUCCESS;
 }
 
-void some_do_for_person(std::shared_ptr<person> &prn) noexcept {
+void some_do_for_person(const std::shared_ptr<person> &prn) noexcept {
     pout << "inside the function: " << NL;
     pout << "use count is: " << prn.use_count() << NL;
     prn->display_person();
+    prn->set_first_name("Hinata");
 }
-
-//(03:29:26)
