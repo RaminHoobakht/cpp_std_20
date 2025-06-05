@@ -38,5 +38,3 @@ void some_do_for_person(const std::shared_ptr<person> &prn) noexcept {
     prn->display_person();
     prn->set_first_name("Hinata");
 }
-
-//(03:43:38)
