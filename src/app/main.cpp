@@ -10,6 +10,7 @@ using person = entity::person;
 
 
 void some_do_for_person(const std::shared_ptr<person> &prn) noexcept;
+std::shared_ptr<person> get_shared_pointer() noexcept;
 
 
 int main() {
@@ -18,17 +19,14 @@ int main() {
 
     LF;
 
-    std::shared_ptr<person> muratsubaki{
-            std::make_shared<person>("Haruyoshi", "Muratsubaki", 1001, 64)};
+    auto result{get_shared_pointer()};
     SEP;
 
-    some_do_for_person(muratsubaki);
+    result->display_person();
     SEP;
 
-    muratsubaki->display_person();
-    SEP;
 
-    pout << "\n #(03:29:26): The End ..." << eln;
+    pout << "\n #(03:43:38): The End ..." << eln;
     return EXIT_SUCCESS;
 }
 
@@ -39,4 +37,9 @@ void some_do_for_person(const std::shared_ptr<person> &prn) noexcept {
     prn->set_first_name("Hinata");
 }
 
-//(03:43:38)
+std::shared_ptr<person> get_shared_pointer() noexcept {
+    pout << "inside the function: " << NL;
+    std::shared_ptr<person> hinata{
+            std::make_shared<person>("Hinta", "Chikao", 1002, 64)};
+    return hinata;
+}
