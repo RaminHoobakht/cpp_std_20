@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <memory>
 #include <format>
 #include <ostream>
 #include <sstream>

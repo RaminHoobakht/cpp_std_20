@@ -14,6 +14,8 @@ namespace entity {
         std::string last_name_{};
         uint person_id_{};
         uint age_{};
+        /*std::shared_ptr<person> my_friend_{nullptr};*/
+        std::weak_ptr<person> my_friend_{};
 
     public:
         person() noexcept;
@@ -35,6 +37,7 @@ namespace entity {
         void set_first_name(std::string_view first_name_param) noexcept;
         void set_last_name(std::string_view last_name_param) noexcept;
         void set_age(uint age_param) noexcept;
+        void set_friend(std::shared_ptr<person> prn) noexcept;
 
         [[nodiscard]] uint get_person_id() const noexcept;
         [[nodiscard]] const std::string &get_first_name() const noexcept;

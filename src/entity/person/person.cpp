@@ -1,5 +1,4 @@
 #include "person.hpp"
-#include <sstream>
 
 
 namespace entity {
@@ -173,6 +172,10 @@ namespace entity {
                             " {", person_id_, first_name_, last_name_, age_,
                             " }", ss.str())
              << NL;
+    }
+
+    void person::set_friend(std::shared_ptr<person> prn) noexcept {
+        my_friend_ = prn;
     }
 
 } // namespace entity
