@@ -12,8 +12,6 @@ int main() {
     LF;
 
 
-    pout << "\n #(06:43:27): The End ..." << eln;
+    pout << "\n #(03:16:52): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(03:16:52)
