@@ -43,5 +43,3 @@ std::shared_ptr<person> get_shared_pointer() noexcept {
             std::make_shared<person>("Hinta", "Chikao", 1002, 64)};
     return hinata;
 }
-
-//(03:51:31)
