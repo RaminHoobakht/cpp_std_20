@@ -1,32 +1,38 @@
 /*
- *  Subject: Using Smart Pointer:
- *              - using weak smart pointer
+ *  Subject: operator overloading
  *
  * */
 
 #include "main.hpp"
 
-using person = entity::person;
+using point = entity::point3;
 
 int main() {
 
-    /* {"Haruyoshi", "Muratsubaki", 1001, 65}; */
-    /* {"Hinata", "Chikao", 1002, 64}; */
-
     LF;
 
-    std::shared_ptr<person> muratsubaki{
-            std::make_shared<person>("Haruyoshi", "Muratsubaki", 1001, 65)};
+    point point_one{120.36, 71.14};
+    SEP;
 
-    std::shared_ptr<person> hinata{
-            std::make_shared<person>("Hinata", "Chikao", 1002, 64)};
+    point_one.print_info();
+    SEP;
 
-    muratsubaki->set_friend(hinata);
-    hinata->set_friend(muratsubaki);
+    point point_two{15.85, 41.74};
+    SEP;
+
+    point_two.print_info();
+    SEP;
+
+    point point_three{point_one + point_two};
+    SEP;
+
+    point_three.print_info();
+    SEP;
 
 
-    pout << "\n #(03:51:31): The End ..." << eln;
+    (point_one + point_two + point_three).print_info();
+
+
+    pout << "\n #(06:43:27): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(06:43:27)
