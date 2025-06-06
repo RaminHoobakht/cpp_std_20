@@ -24,6 +24,6 @@ namespace entity {
         ~dog() noexcept;
     };
 
-} // namespace name
+} // namespace entity
 
 #endif

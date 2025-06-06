@@ -1,4 +1,4 @@
 #! /bin/bash
 
-clang-format-19 --assume-filename=.clang-format -i src/app/*.* src/header/*.* 
+clang-format-20 --assume-filename=.clang-format --files=file_list.fmt --sort-includes -i  
 

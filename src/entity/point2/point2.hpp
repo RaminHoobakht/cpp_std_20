@@ -15,8 +15,8 @@ namespace entity {
         double y_{};
 
     public:
-        /* by using inline keyword, there is no 
-         * need initializing point2_count at out 
+        /* by using inline keyword, there is no
+         * need initializing point2_count at out
          * of the class. */
         inline static std::size_t point2_count;
 

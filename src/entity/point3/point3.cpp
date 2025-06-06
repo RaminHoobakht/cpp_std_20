@@ -83,12 +83,12 @@ namespace entity {
         return point3(rhs.get_x() + lhs.get_x(), rhs.get_y() + lhs.get_y());
     }
 
-    double point3::operator[](size_t index) noexcept {
+    double &point3::operator[](size_t index) noexcept {
         // if (index > 1) {
         //     throw std::out_of_range("index is out of range ...");
         // }
         assert(index == 0 || index == 1);
-        return (index == 0) ? get_x() : get_y();
+        return (index == 0) ? x_ : y_;
     }
 
 } // namespace entity

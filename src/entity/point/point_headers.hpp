@@ -3,12 +3,12 @@
 
 #pragma once
 
+#include <cmath>
 #include <compare>
 #include <format>
 #include <ostream>
-#include <utility>
-#include <cmath>
 #include <stdfloat>
+#include <utility>
 #include "../../util/util.hpp"
 
 #endif

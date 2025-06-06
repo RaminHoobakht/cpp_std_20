@@ -32,7 +32,8 @@ namespace entity {
 
         [[nodiscard]] std::float128_t distance() const noexcept;
 
-        [[maybe_unused]] [[nodiscard]] inline static uint point_cout() noexcept{
+        [[maybe_unused]] [[nodiscard]] inline static uint
+        point_cout() noexcept {
             return point_count_;
         }
 
@@ -43,9 +44,6 @@ namespace entity {
                                         const point &rhs) noexcept;
 
         auto operator<=>(const point &rhs) const = default;
-
-    
-
     };
 
 

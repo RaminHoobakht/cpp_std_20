@@ -3,9 +3,9 @@
 
 #pragma once
 
+#include <format>
 #include <string>
 #include <string_view>
-#include <format>
 #include "../../util/util.hpp"
 
 

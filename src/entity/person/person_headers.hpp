@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <memory>
 #include <format>
+#include <memory>
 #include <ostream>
 #include <sstream>
 #include <string>

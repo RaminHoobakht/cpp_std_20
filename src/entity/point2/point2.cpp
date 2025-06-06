@@ -21,7 +21,7 @@ namespace entity {
         pout << "copy constructor ..." << NL;
     }
 
-    point2::~point2() noexcept { 
+    point2::~point2() noexcept {
         pout << "Goodbye Poin2 ..." << NL;
         --point2_count;
     }

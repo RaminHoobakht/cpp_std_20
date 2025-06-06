@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <cstddef>
 #include <cmath>
+#include <cstddef>
 #include "../../util/util.hpp"
 
 #endif /* HEADERS_POINT_2_HEADERS_HPP */

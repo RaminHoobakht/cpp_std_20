@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <cassert>
 #include "../entity/point3/point3.hpp"
 #include "../util/util.hpp"
 

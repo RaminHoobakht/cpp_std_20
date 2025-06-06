@@ -13,10 +13,10 @@ namespace entity {
         double base_radius_{1};
         double height_{2};
 
-        /* static: Pi is belongs to the cylinder blueprint not every instance. 
-         * inline: make a facilities to initial the Pi inline not out of the class.
-         * const : Pi not changeable. its value is constant. 
-         * long double: is floating point data-type */
+        /* static: Pi is belongs to the cylinder blueprint not every instance.
+         * inline: make a facilities to initial the Pi inline not out of the
+         * class. const : Pi not changeable. its value is constant. long double:
+         * is floating point data-type */
         static inline const long double Pi{3.14159265358979323};
 
     public:
