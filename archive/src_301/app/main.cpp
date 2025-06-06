@@ -43,5 +43,3 @@ inline int add(int a, int b) noexcept {
     /* code */
     return a + b;
 }
-
-//(04:52:38)
