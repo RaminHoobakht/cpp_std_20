@@ -44,7 +44,9 @@ namespace entity {
         point3 &operator=(const point3 &rhs) noexcept;
         point3 &operator=(point3 &&rhs) noexcept;
 
-        // point3 operator+(const point3 &rhs) noexcept;
+        point3 operator+(const point3 &rhs) noexcept;
+        double operator[](size_t index) noexcept;
+
         friend point3 operator+(const point3 &rhs, const point3 &lhs) noexcept;
     };
 

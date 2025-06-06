@@ -4,8 +4,11 @@
 #pragma once
 
 #include <cmath>
+#include <exception>
 #include <sstream>
+#include <stdexcept>
 #include <utility>
+#include <cassert>
 #include "../../util/util.hpp"
 
 

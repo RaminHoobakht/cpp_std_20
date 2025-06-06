@@ -68,9 +68,9 @@ namespace entity {
         return *this;
     }
 
-    // point3 point3::operator+(const point3 &rhs) noexcept {
-    //     return point3(x_ + rhs.get_x(), y_ + rhs.get_y());
-    // }
+    point3 point3::operator+(const point3 &rhs) noexcept {
+        return point3(x_ + rhs.get_x(), y_ + rhs.get_y());
+    }
 
     void point3::print_info() const noexcept {
         pout << "{ \"x\":" << x_ << ", "
@@ -83,5 +83,12 @@ namespace entity {
         return point3(rhs.get_x() + lhs.get_x(), rhs.get_y() + lhs.get_y());
     }
 
+    double point3::operator[](size_t index) noexcept {
+        // if (index > 1) {
+        //     throw std::out_of_range("index is out of range ...");
+        // }
+        assert(index == 0 || index == 1);
+        return (index == 0) ? get_x() : get_y();
+    }
 
 } // namespace entity
