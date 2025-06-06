@@ -68,14 +68,20 @@ namespace entity {
         return *this;
     }
 
-    point3 point3::operator+(const point3 &rhs) noexcept {
-        return point3(x_ + rhs.get_x(), y_ + rhs.get_y());
-    }
+    // point3 point3::operator+(const point3 &rhs) noexcept {
+    //     return point3(x_ + rhs.get_x(), y_ + rhs.get_y());
+    // }
 
     void point3::print_info() const noexcept {
         pout << "{ \"x\":" << x_ << ", "
              << "\"y\":" << y_ << ", "
              << "\"length\":" << length_ << " } -> " << ss_.str() << NL;
     }
+
+    point3 operator+(const point3 &rhs, const point3 &lhs) noexcept {
+        /* code */
+        return point3(rhs.get_x() + lhs.get_x(), rhs.get_y() + lhs.get_y());
+    }
+
 
 } // namespace entity

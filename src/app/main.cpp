@@ -1,5 +1,5 @@
 /*
- *  Subject: inline function
+ *  Subject: operator overloading (+)
  *
  * */
 
@@ -7,41 +7,27 @@
 
 using point = entity::point3;
 
-/* using inline function in structural programming */
-inline int add(int a, int b) noexcept;
-
-
 int main() {
 
-    LF;
-
-    /* lambda can not be inline. encounter with compile time error */
-    // auto inline func_add = [](int a, int b) {
-    //     /* code */
-    //     return a + b;
-    // };
-
-    auto func_add = [](int a, int b) {
-        /* code */
-        return a + b;
-    };
-
-
-    auto result{add(50, 60)};
-    pout << "value of result is: " << result << NL;
+    pout << "create point one: " << NL;
+    point point_one{120.36, 96.52};
+    point_one.print_info();
     SEP;
 
-    auto result2{func_add(60, 70)};
-    pout << "value of result2 is: " << result2 << NL;
 
-    pout << "\n #(03:16:52): The End ..." << eln;
+    pout << "create point two: " << NL;
+    point point_two{87.12, 54.21};
+    point_two.print_info();
+    SEP;
+
+    pout << "create point three: " << NL;
+    point point_three{point_one + point_two};
+    SEP;
+
+    pout << "print information for point three: " << NL;
+    point_three.print_info();
+    SEP;
+
+    pout << "\n #(04:52:38): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-/* using inline function in structural programming */
-inline int add(int a, int b) noexcept {
-    /* code */
-    return a + b;
-}
-
-//(04:52:38)
