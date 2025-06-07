@@ -26,3 +26,6 @@ src/entity/point3/point3.hpp
 src/entity/user/user_headers.hpp
 src/entity/user/user.hpp
 src/entity/user/user.cpp
+src/entity/scores/scores_headers.hpp
+src/entity/scores/scores.hpp
+src/entity/scores/scores.cpp

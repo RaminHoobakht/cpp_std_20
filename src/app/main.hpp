@@ -3,8 +3,7 @@
 
 #pragma once
 
-#include <cassert>
-#include "../entity/point3/point3.hpp"
+#include "../entity/scores/scores.hpp"
 #include "../util/util.hpp"
 
 #endif /* HEADER_MAIN_HPP */
