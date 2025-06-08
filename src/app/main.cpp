@@ -10,26 +10,16 @@ using scores = entity::scores;
 
 int main() {
 
-    // scores my_scores{"Math"};
-    // my_scores.print_info();
+    scores geography{"Geography"};
 
-    // my_scores[5] = 63.25;
-    // my_scores.print_info();
+    geography[0] = 75.23;
+    for (size_t i{1UL}; i < 20; ++i) {
+        geography[i] = geography[i - 1] + 0.73;
+    }
 
-    // my_scores[0] = 73.36;
-    // for (size_t i{1}; i < 20; ++i) {
-    //     my_scores[i] = my_scores[i - 1] + 0.54;
-    // }
-
-    // my_scores.print_info();
+    pout << geography << NL;
 
 
-    const scores geography("Geography");
-
-    pout << geography[5] << NL;
-
-    pout << "\n #(22:03:21): The End ..." << eln;
+    pout << "\n #(07:46:59): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(07:46:59)

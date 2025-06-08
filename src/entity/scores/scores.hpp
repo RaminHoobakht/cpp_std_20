@@ -12,6 +12,7 @@ namespace entity {
     private:
         std::string course_name_{};
         double scores_[20]{};
+        friend std::ostream &operator<<(std::ostream &os, scores &rhs) noexcept;
 
     public:
         scores() noexcept = delete;

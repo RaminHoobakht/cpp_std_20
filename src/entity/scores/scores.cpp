@@ -25,5 +25,14 @@ namespace entity {
         std::cout << " ]" << NL;
     }
 
+    std::ostream &operator<<(std::ostream &os, scores &rhs) noexcept {
+        std::string buffer{};
+        buffer.append(rhs.course_name_).append(": [ ");
+        for (size_t i{util::zero}; i < 20; ++i) {
+            buffer.append(std::to_string(rhs.scores_[i])).append(" ");
+        }
+        buffer.append(" ]");
+        return os << buffer;
+    }
 
 } // namespace entity
