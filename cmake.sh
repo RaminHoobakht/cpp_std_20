@@ -3,7 +3,7 @@
 # for run poco server
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-./format.sh
+# ./format.sh
 
 if [[ $1 == 0 ]]; then
     nice -n 20 ./build/cpp_result

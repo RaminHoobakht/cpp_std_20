@@ -1,27 +1,24 @@
 /*
  *  Subject: operator overloading
  *
- * */
+ * * */
 
 #include "main.hpp"
 
-using scores = entity::scores;
-
-
 int main() {
+    /* code */
 
-    scores geography{"Geography"};
+    entity::point3 point_one{120.36, 45.78};
+    SEP;
 
-    geography[0] = 75.23;
-    for (size_t i{1UL}; i < 20; ++i) {
-        geography[i] = geography[i - 1] + 0.73;
-    }
+    point_one.print_info();
+    SEP;
 
-    pout << geography << NL;
+    pout << "enter x and y for point_one: ";
+    cin >> point_one;
+    point_one.print_info();
+    SEP;
 
-
-    pout << "\n #(07:46:59): The End ..." << eln;
+    pout << "\n #(04:36:46): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(04:36:46)

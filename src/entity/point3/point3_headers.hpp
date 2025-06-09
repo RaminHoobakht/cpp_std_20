@@ -6,6 +6,7 @@
 #include <cassert>
 #include <cmath>
 #include <exception>
+#include <istream>
 #include <sstream>
 #include <stdexcept>
 #include <utility>
