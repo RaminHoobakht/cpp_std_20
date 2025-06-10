@@ -5,41 +5,46 @@
 
 #include "main.hpp"
 
+namespace learn_cpp {
+
+    class number final {
+
+    private:
+        int x_{};
+
+    public:
+        number() noexcept = default;
+        explicit number(const int num_param) noexcept : x_(num_param) {}
+
+        [[maybe_unused]] void set_x(const int x_param) noexcept {
+            x_ = x_param;
+        }
+
+        [[nodiscard]] int get_x() const noexcept { return x_; }
+
+        operator double() const noexcept { return static_cast<double>(x_); }
+        operator entity::point4() const noexcept {
+            return entity::point4(x_, 0.0);
+        }
+    };
+} // namespace learn_cpp
+
+
 int main() {
     /* code */
 
-    entity::point4 point_one{12.36, 23.52};
-    entity::point4 point_two{11.41, 31.12};
-
-    // pout << "point_one: " << NL;
-    //  point_one.print_info();
-    //  SEP;
-
-    // pout << "point_tow: " << NL;
-    // point_two.print_info();
-    // SEP;
-
-    pout << "point_three (adding): " << NL;
-    entity::point4 point_three{point_one + point_two};
-    point_three.print_info();
+    learn_cpp::number my_number{120};
+    pout << "value of number class is: " << my_number.get_x() << NL;
     SEP;
 
-    pout << "point_four (subtracing): " << NL;
-    entity::point4 point_four{point_one - point_two};
-    point_four.print_info();
+    double dbl_num{static_cast<double>(my_number)};
+    pout << "value of dbl_num is: " << dbl_num << NL;
     SEP;
 
-    pout << "(point_three += point_four): " << NL;
-    (point_three += point_four).print_info();
+    entity::point4 my_point{static_cast<entity::point4>(my_number)};
+    my_point.print_info();
     SEP;
 
-    pout << "(point_three -= point_four): " << NL;
-    (point_three -= point_four).print_info();
-    SEP;
-
-
-    pout << "\n #(07:53:58): The End ..." << eln;
+    pout << "\n #(10:22:14): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(10:22:14)
