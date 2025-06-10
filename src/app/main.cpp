@@ -1,5 +1,5 @@
 /*
- *  Subject: operator overloading
+ *  Subject: custom type conversion
  *
  * * */
 
@@ -7,14 +7,14 @@
 
 namespace learn_cpp {
 
-    class number final {
+    class raphael final {
 
     private:
         int x_{};
 
     public:
-        number() noexcept = default;
-        explicit number(const int num_param) noexcept : x_(num_param) {}
+        raphael() noexcept : raphael{0} {}
+        explicit raphael(const int x_param) noexcept : x_{x_param} {}
 
         [[maybe_unused]] void set_x(const int x_param) noexcept {
             x_ = x_param;
@@ -22,31 +22,34 @@ namespace learn_cpp {
 
         [[nodiscard]] int get_x() const noexcept { return x_; }
 
-        operator double() const noexcept { return static_cast<double>(x_); }
-        operator entity::point4() const noexcept {
+        explicit operator double() const noexcept {
+            return static_cast<double>(x_);
+        }
+
+        explicit operator entity::point4() const noexcept {
             return entity::point4(x_, 0.0);
         }
     };
+
 } // namespace learn_cpp
 
 
 int main() {
     /* code */
 
-    learn_cpp::number my_number{120};
-    pout << "value of number class is: " << my_number.get_x() << NL;
+    learn_cpp::raphael raphael_one{120};
+
+    pout << "raphael_one: " << NL;
+    double result{static_cast<double>(raphael_one)};
+    pout << "value of result is: " << result << NL;
     SEP;
 
-    double dbl_num{static_cast<double>(my_number)};
-    pout << "value of dbl_num is: " << dbl_num << NL;
+    pout << "point_one: " << NL;
+    entity::point4 point_one{static_cast<entity::point4>(raphael_one)};
+    point_one.print_info();
     SEP;
 
-    entity::point4 my_point{static_cast<entity::point4>(my_number)};
-    my_point.print_info();
-    SEP;
 
-    pout << "\n #(10:22:14): The End ..." << eln;
+    pout << "\n #(10:55:18): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(10:55:18)
