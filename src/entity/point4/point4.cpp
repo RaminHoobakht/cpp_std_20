@@ -12,20 +12,16 @@ namespace entity {
         pout << std::format("[ x:{}, y:{} ]\n", x_, y_);
     }
 
-    point4 operator+=(const point4 &lhs,
-                                       const point4 &rhs) noexcept {
-            double x{lhs.x_ + rhs.x_};
-            double y{lhs.y_ + rhs.y_};
-            point4 my_point{x, y};
-            return my_point;
+    point4 &operator+=(point4 &lhs, const point4 &rhs) noexcept {
+        lhs.x_ += rhs.x_;
+        lhs.y_ += rhs.y_;
+        return lhs;
     }
 
-    point4 operator-=(const point4 &lhs,
-                                       const point4 &rhs) noexcept {
-            double x{lhs.x_ - rhs.x_};
-            double y{lhs.y_ - rhs.y_};
-            point4 my_point{x, y};
-            return my_point;
+    point4 &operator-=(point4 &lhs, const point4 &rhs) noexcept {
+        lhs.x_ -= rhs.x_;
+        lhs.y_ -= rhs.y_;
+        return lhs;
     }
 
     point4 operator+(const point4 &lhs, const point4 &rhs) noexcept {

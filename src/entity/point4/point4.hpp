@@ -17,11 +17,14 @@ namespace entity {
         point4() noexcept;
         point4(double x_param) noexcept;
         point4(double x_param, double y_param) noexcept;
+
         [[maybe_unused]] void print_info() const noexcept;
+
+        friend point4 &operator+=(point4 &lhs, const point4 &rhs) noexcept;
+        friend point4 &operator-=(point4 &lhs, const point4 &rhs) noexcept;
+
         friend point4 operator+(const point4 &lhs, const point4 &rhs) noexcept;
         friend point4 operator-(const point4 &lhs, const point4 &rhs) noexcept;
-        friend point4 operator+=(const point4 &lhs, const point4 &rhs) noexcept;
-        friend point4 operator-=(const point4 &lhs, const point4 &rhs) noexcept;
     };
 
 
