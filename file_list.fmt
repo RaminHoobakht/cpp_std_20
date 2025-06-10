@@ -23,6 +23,9 @@ src/entity/point2/point2.cpp
 src/entity/point3/point3_headers.hpp
 src/entity/point3/point3.hpp
 src/entity/point3/point3.hpp
+src/entity/point4/point4_headers.hpp
+src/entity/point4/point4.hpp
+src/entity/point4/point4.hpp
 src/entity/user/user_headers.hpp
 src/entity/user/user.hpp
 src/entity/user/user.cpp

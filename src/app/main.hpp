@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "../entity/point3/point3.hpp"
+#include "../entity/point4/point4.hpp"
 #include "../util/util.hpp"
 
 #endif /* HEADER_MAIN_HPP */
