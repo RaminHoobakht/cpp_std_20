@@ -32,6 +32,6 @@ src/entity/user/user.cpp
 src/entity/scores/scores_headers.hpp
 src/entity/scores/scores.hpp
 src/entity/scores/scores.cpp
-src/entity/scores/number_headers.hpp
-src/entity/scores/number.hpp
-src/entity/scores/number.cpp
+src/entity/number/number_headers.hpp
+src/entity/number/number.hpp
+src/entity/number/number.cpp

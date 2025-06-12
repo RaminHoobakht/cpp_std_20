@@ -3,9 +3,8 @@
 
 #pragma once
 
-#include "../../util/util.hpp"
 #include <ostream>
-
+#include "../../util/util.hpp"
 
 
 #endif /* HEADER_NUMBER_HEADERS_HPP */
