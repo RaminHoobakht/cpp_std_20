@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "number_headers.hpp"
 
 namespace entity {
 
@@ -10,18 +11,22 @@ namespace entity {
 	class number final {
 
 	private:
-		number friend operator+(const number &lhs, const number &rhs) noexcept;
-		number friend operator-(const number &lhs, const number &rhs) noexcept;
-		number friend operator/(const number &lhs, const number &rhs) noexcept;
-		number friend operator*(const number &lhs, const number &rhs) noexcept;
-		number friend operator%(const number &lhs, const number &rhs) noexcept;
+		friend number operator+(const number &lhs, const number &rhs) noexcept;
+		friend number operator-(const number &lhs, const number &rhs) noexcept;
+		friend number operator/(const number &lhs, const number &rhs) noexcept;
+		friend number operator*(const number &lhs, const number &rhs) noexcept;
+		friend number operator%(const number &lhs, const number &rhs) noexcept;
+
+	private:
+		friend std::ostream &operator<<(std::ostream &os, const number &rhs) noexcept;
+
 
 	private:
 		int num_{};
 
 	public:
 		number() noexcept;
-		explicit number(int num_param) noexcept;
+		number(int num_param) noexcept;
 		~number() noexcept;
 
 		[[maybe_unused]] void set_number(int num_param) noexcept;
