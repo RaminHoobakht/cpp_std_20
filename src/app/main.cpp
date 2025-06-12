@@ -1,5 +1,5 @@
 /*
- *  Subject: custom type conversion
+ *  Subject: unary increment prefix overloading
  *
  * * */
 
@@ -7,23 +7,7 @@
 
 int main() {
 
-    entity::number my_number{120};
 
-    pout << "value of my_number is: " << my_number << NL;
-    SEP;
-    
-    ++my_number;
-    pout << "value of my_number is: " << my_number << NL; // 121
-    SEP;
-
-    pout << "value of my_number is: " << my_number++ << NL; // 121
-    SEP;
-
-    pout << "value of my_number is: " << my_number << NL; // 122
-    SEP;
-
-    pout << "\n #(06:02:58): The End ..." << eln;
+    pout << "\n #(20:26:36): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(20:26:36)

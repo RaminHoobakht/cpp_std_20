@@ -29,14 +29,14 @@ option(USE_PYTHON "Enable Python integration" OFF)
 # Project source files
 add_executable(${PROJECT_NAME}
         src/app/main.cpp
-        src/entity/number/number.cpp
+        src/entity/number2/number2.cpp
         src/util/util.cpp
 )
 
 # Add include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
         src/app
-        src/entity/number
+        src/entity/number2
         src/util
 )
 
