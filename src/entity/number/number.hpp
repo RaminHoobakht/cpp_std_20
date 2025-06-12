@@ -34,6 +34,7 @@ namespace entity {
 
     public:
         number &operator++() noexcept;
+        number operator++(int lhs) noexcept;
     };
 
 } // namespace entity

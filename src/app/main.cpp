@@ -6,21 +6,22 @@
 #include "main.hpp"
 
 int main() {
-    /* code */
 
     entity::number my_number{120};
-    pout << "value of my_number: " << my_number << NL;
+
+    pout << "value of my_number is: " << my_number << NL;
+    SEP;
+    
+    ++my_number;
+    pout << "value of my_number is: " << my_number << NL; // 121
     SEP;
 
-
-    for (size_t i{0UL}; i < 20; ++i) {
-        pout << "current value is: " << ++my_number << NL;
-    }
+    pout << "value of my_number is: " << my_number++ << NL; // 121
     SEP;
 
+    pout << "value of my_number is: " << my_number << NL; // 122
+    SEP;
 
-    pout << "\n #(03:43:45): The End ..." << eln;
+    pout << "\n #(06:02:58): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(06:02:58)

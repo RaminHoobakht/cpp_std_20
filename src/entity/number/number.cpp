@@ -48,5 +48,9 @@ namespace entity {
         return *this;
     }
 
+    number number::operator++(int lhs) noexcept {
+        lhs++;
+        return number{num_++};
+    }
 
 } // namespace entity
