@@ -22,5 +22,3 @@ int main() {
     pout << "\n #(03:43:45): The End ..." << eln;
     return EXIT_SUCCESS;
 }
-
-//(06:02:58)
