@@ -3,12 +3,8 @@
 
 #pragma once
 
-#include <compare>
-#include <ostream>
+#include "../util/util.hpp"
 #include <string>
 #include <string_view>
-#include <utility>
-#include "../util/util.hpp"
-#include "samuel.hpp"
 
 #endif /* HEADER_MAIN_HPP */
