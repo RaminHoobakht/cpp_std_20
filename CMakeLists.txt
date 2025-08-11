@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 4.1.0)
 
 project(
-        STD202
+        STD20
         VERSION 0.1
         DESCRIPTION "Training C++"
         LANGUAGES C CXX ASM
@@ -33,9 +33,6 @@ endif ()
 # Source files
 set(SOURCES
         src/app/main.cpp
-        src/app/shape.cpp
-        src/app/oval.cpp
-        src/app/circle.cpp
         src/util/util.cpp
 )
 
