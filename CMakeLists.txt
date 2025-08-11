@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 4.1.0)
 
 project(
-        cpp_result
+        STD202
         VERSION 0.1
         DESCRIPTION "Training C++"
-        LANGUAGES CXX C ASM
+        LANGUAGES C CXX ASM
 )
 
 # C/C++ Standards
@@ -21,26 +21,35 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 option(USE_POCO "Enable POCO libraries" OFF)
 option(USE_PGSQL "Enable PostgreSQL support" OFF)
 option(USE_PYTHON "Enable Python integration" OFF)
+option(USE_NATIVE_ARCH "Enable native architecture tuning" OFF)
 
-# set(CMAKE_TOOLCHAIN_FILE "")
-# set(CMAKE_C_COMPILER "/usr/bin/gcc-14")
-# set(CMAKE_CXX_COMPILER "/usr/bin/g++-14")
+# Optional architecture flags
+if (USE_NATIVE_ARCH)
+    add_compile_options(-march=native -mtune=native)
+else ()
+    add_compile_options(-m64 -march=corei7-avx)
+endif ()
 
-# Project source files
-add_executable(${PROJECT_NAME}
+# Source files
+set(SOURCES
         src/app/main.cpp
+        src/app/shape.cpp
+        src/app/oval.cpp
+        src/app/circle.cpp
         src/util/util.cpp
 )
 
-# Add include directories
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
         src/app
         src/util
+        ${PROJECT_BINARY_DIR}
 )
 
-# Compiler warnings & flags
+# Compiler warnings and flags
 target_compile_options(${PROJECT_NAME} PRIVATE
-        -std=gnu++26
         -O0
         -g3
         -fmessage-length=0
@@ -72,7 +81,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
         -Wstrict-null-sentinel
         -Wstrict-overflow=5
         -Werror
-        -Wno-unused
         -Weffc++
         -Winline
         -Winvalid-pch
@@ -82,38 +90,33 @@ target_compile_options(${PROJECT_NAME} PRIVATE
         -Wunsafe-loop-optimizations
         -Wunused-parameter
         -Wformat-nonliteral
-        -Wformat-security -Wpacked
-        -Wimport -Wwrite-strings
+        -Wformat-security
+        -Wpacked
+        -Wimport
+        -Wwrite-strings
         -Wvariadic-macros
         -Wmissing-field-initializers
         -Wmissing-format-attribute
-        -Wunused-parameter
         -Wunreachable-code
-        -Wunused
         -Wpointer-arith
         -Wmissing-noreturn
         -Wpadded
         -v
         -fPIC
         -fPIE
-        -m64
-        -march=corei7-avx
 )
 
-
-# Optional: Link math library
+# Optional libraries
 find_library(MATH_LIBRARY m)
 if (MATH_LIBRARY)
     target_link_libraries(${PROJECT_NAME} PRIVATE ${MATH_LIBRARY})
 endif ()
 
-# Optional: CURL
 find_library(CURL_LIBRARY curl)
 if (CURL_LIBRARY)
     target_link_libraries(${PROJECT_NAME} PRIVATE ${CURL_LIBRARY})
 endif ()
 
-# Optional: PostgreSQL
 if (USE_PGSQL)
     find_library(PQ_LIBRARY pq)
     find_library(PQX_LIBRARY pqxx)
@@ -122,13 +125,11 @@ if (USE_PGSQL)
     endif ()
 endif ()
 
-# Optional: Python
 if (USE_PYTHON)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
     target_link_libraries(${PROJECT_NAME} PRIVATE Python3::Python)
 endif ()
 
-# Optional: POCO libraries
 if (USE_POCO)
     find_package(Poco REQUIRED COMPONENTS
             Foundation
@@ -144,15 +145,28 @@ if (USE_POCO)
             MongoDB
             Redis
     )
-    target_link_libraries(${PROJECT_NAME} PRIVATE Poco::Foundation Poco::JSON Poco::Net Poco::Util Poco::Crypto)
+
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+            Poco::Foundation
+            Poco::JSON
+            Poco::Net
+            Poco::Util
+            Poco::Crypto
+    )
 endif ()
 
-# Install instructions
+# Configuration file
+configure_file(config.h.in config.h)
+
+# Installation rules
 include(GNUInstallDirs)
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
-configure_file(config.h.in config.h)
-target_include_directories(${PROJECT_NAME} PUBLIC "${PROJECT_BINARY_DIR}")
+# Packaging
+set(CPACK_PACKAGE_NAME "STD202")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_GENERATOR "TGZ;DEB")
+include(CPack)
