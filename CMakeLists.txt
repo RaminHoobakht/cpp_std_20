@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 4.1.0)
 
 project(
-        STD20
+        STD202
         VERSION 0.1
         DESCRIPTION "Training C++"
         LANGUAGES C CXX ASM

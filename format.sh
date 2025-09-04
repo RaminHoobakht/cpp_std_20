@@ -1,4 +1,3 @@
 #! /bin/bash
 
-clang-format-20 --assume-filename=.clang-format --files=file_list.fmt --sort-includes -i  
-
+ find src/ -type f \( -name "*.cpp" -o -name "*.hpp" \) -exec clang-format --assume-filename=.clang-format --sort-includes -i {} \;
