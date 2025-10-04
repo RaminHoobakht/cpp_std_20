@@ -1,5 +1,5 @@
-#ifndef HEADER_MAIN_CPP
-#define HEADER_MAIN_CPP
+#ifndef HEADER_UTIL_CPP
+#define HEADER_UTIL_CPP
 
 #pragma once
 
@@ -37,20 +37,21 @@ constexpr char SP{'\x20'};
 
 namespace util {
 
-    constexpr size_t zero{0LU};
+    constexpr size_t zero_{0LU};
+    constexpr size_t one_{1LU};
 
     /* -------------------------------------------------- */
 
-    void separator(size_t no = 64LU, char ch = '-') noexcept;
-    void lf_separator(size_t no = 64LU, char ch = '-') noexcept;
-    void lf_separator_lf(size_t no = 64LU, char ch = '-') noexcept;
+    void separator(size_t no = 64LU, char ch = '-') noexcept(true);
+    void lf_separator(size_t no = 64LU, char ch = '-') noexcept(true);
+    void lf_separator_lf(size_t no = 64LU, char ch = '-') noexcept(true);
 
-    std::string &trim(std::string &str, bool right, bool left) noexcept;
+    std::string &trim(std::string &str, bool right, bool left) noexcept(true);
 
     /* -------------------------------------------------- */
 
     template<typename T>
-    const char *data_type_name(T dt) noexcept {
+    const char *data_type_name(T dt) noexcept(true) {
 
         const char *dts{typeid(dt).name()};
 
@@ -127,8 +128,8 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    class publicexception;
+    class public_exception;
 
 } // namespace util
 
-#endif /* HEADER_MAIN_CPP */
+#endif /* HEADER_UTIL_CPP */

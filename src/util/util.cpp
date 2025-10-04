@@ -3,43 +3,42 @@
 namespace util {
 
 
-    void separator(const size_t no, const char ch) noexcept {
-        for (size_t i{zero}; i < no; ++i) {
+    void separator(const size_t no, const char ch) noexcept(true) {
+        for (size_t i{zero_}; i < no; ++i) {
             std::cout << ch;
         }
         std::cout << NL;
     }
 
-    void lf_separator(const size_t no, const char ch) noexcept {
+    void lf_separator(const size_t no, const char ch) noexcept(true) {
         LF;
-        for (size_t i{zero}; i < no; ++i) {
+        for (size_t i{zero_}; i < no; ++i) {
             std::cout << ch;
         }
         std::cout << NL;
     }
 
-    void lf_separator_lf(const size_t no, const char ch) noexcept {
+    void lf_separator_lf(const size_t no, const char ch) noexcept(true) {
         LF;
-        for (size_t i{zero}; i < no; ++i) {
+        for (size_t i{zero_}; i < no; ++i) {
             std::cout << ch;
         }
         std::cout << NL;
         LF;
     }
-
 
     std::string &trim(std::string &str, const bool right,
-                      const bool left) noexcept {
+                      const bool left) noexcept(true) {
 
         if (right) {
-            while (str[0] < 33) {
-                str.erase(0, 1);
+            while (str[zero_] < 33) {
+                str.erase(zero_, one_);
             }
         }
 
         if (left) {
-            while (str[str.size() - 1] < 33) {
-                str.erase(str.size() - 1, 1);
+            while (str[str.size() - one_] < 33) {
+                str.erase(str.size() - one_, one_);
             }
         }
 
@@ -48,21 +47,17 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    class publicexception final : public std::exception {
+    class public_exception final : public std::exception {
     private:
         std::string message_{};
 
     public:
-        explicit publicexception(std::string message) :
-            message_(std::move(message)) {}
+        public_exception() = delete;
 
-        // publicexception(const exception &exception, std::string message) :
-        //     std::exception(exception), message_(std::move(message)) {}
+        explicit public_exception(const std::string_view message_param) :
+            message_{message_param} {}
 
-        // publicexception(exception &&exception, std::string message) :
-        //     std::exception(exception), message_(std::move(message)) {}
-
-        [[nodiscard]] const char *what() const noexcept override {
+        _GLIBCXX_NODISCARD const char *what() const noexcept(true) override {
             return this->message_.c_str();
         }
     };
